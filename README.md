@@ -15,16 +15,16 @@ This repository serves as a collection of my solutions to coding challenges enco
 # Folder Structure
 The repository is organized by platform, with each platform having its own folder. Within each platform's folder, solutions are further organized by problem name or number. Here's a brief overview:
 
-- **LeetCode: Contains solutions to problems from LeetCode.
-- **HackerRank: Contains solutions to problems from HackerRank.
-- **Codeforces: Contains solutions to problems from Codeforces.
+**LeetCode: Contains solutions to problems from LeetCode.
+**HackerRank: Contains solutions to problems from HackerRank.
+**Codeforces: Contains solutions to problems from Codeforces.
 
 # Languages Used
 The solutions are primarily written in the following languages:
 
-* Python: Known for its simplicity and readability.
-* Java: Preferred for its performance and versatility.
-* C++: Chosen for its efficiency and extensive standard library.
+1. Python: Known for its simplicity and readability.
+2. Java: Preferred for its performance and versatility.
+3. C++: Chosen for its efficiency and extensive standard library.
 
 # Contributing
 If you'd like to contribute to this repository, you're more than welcome to! Here's how you can do it:
