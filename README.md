@@ -15,9 +15,9 @@ This repository serves as a collection of my solutions to coding challenges enco
 # Folder Structure
 The repository is organized by platform, with each platform having its own folder. Within each platform's folder, solutions are further organized by problem name or number. Here's a brief overview:
 
-**LeetCode: Contains solutions to problems from LeetCode.
-**HackerRank: Contains solutions to problems from HackerRank.
-**Codeforces: Contains solutions to problems from Codeforces.
+- LeetCode: Contains solutions to problems from LeetCode.
+- HackerRank: Contains solutions to problems from HackerRank.
+- Codeforces: Contains solutions to problems from Codeforces.
 
 # Languages Used
 The solutions are primarily written in the following languages:
