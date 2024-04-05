@@ -19,6 +19,8 @@ class Solution:
         while end < k:
             window[s2[end]] += 1
             end += 1
+
+        # Check if current window meets the condition and if so return True
         if window == s1_counts:
             return True
         
