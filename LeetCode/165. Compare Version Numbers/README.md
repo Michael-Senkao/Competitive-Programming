@@ -11,7 +11,7 @@ For example, version <code>1.0</code> is less than version <code>1.1</code> beca
 
 <strong><em>Return the following:</em></strong>
 <ul>
-  <li><p></p>If <code>version1 < version2</code>, return <code>-1</code>.</p> </li>
+  <li><p>If <code>version1 < version2</code>, return <code>-1</code>.</p> </li>
   <li><p>If <code>version1 > version2</code>, return <code>1</code>.</p></li>
   <li></li><p>Otherwise, return <code>0</code>.</p></li>
 </ul>
