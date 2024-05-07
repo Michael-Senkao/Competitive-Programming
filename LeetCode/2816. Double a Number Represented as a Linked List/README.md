@@ -5,4 +5,4 @@ You are given the <code>head</code> of a <strong>non-empty</strong> linked list 
 <em>Return the</em> <code>head</code> <em>of the linked list after <strong>doubling</strong> it</em>.
 
  
-**XYZ *WE***
+**XYZ** *WE*
