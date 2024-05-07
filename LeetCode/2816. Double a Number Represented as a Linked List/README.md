@@ -6,13 +6,13 @@ You are given the <code>head</code> of a <strong>non-empty</strong> linked list 
 
  
 
-<strong>Example 1:</strong>
+<strong>Example 1:</strong><br>
 <img src = "https://assets.leetcode.com/uploads/2023/05/28/example.png">
 <p><strong>Input:</strong> head = [1,8,9]</p>
 <p><strong>Output:</strong> [3,7,8]</p>
 <p><strong>Explanation:</strong> The figure above corresponds to the given linked list which represents the number 189. Hence, the returned linked list represents the number 189 * 2 = 378.</p>
 
-<strong>Example 1:</strong>
+<strong>Example 2:</strong><br>
 <img src = "https://assets.leetcode.com/uploads/2023/05/28/example2.png">
 <p><strong>Input:</strong> head = [9,9,9]</p>
 <p><strong>Output:</strong> [1,9,9,8]</p>
