@@ -8,9 +8,9 @@ You are given the <code>head</code> of a <strong>non-empty</strong> linked list 
 
 <h3><strong>Example 1:</strong><h3><br>
 <img src = "https://assets.leetcode.com/uploads/2023/05/28/example.png">
-<p><strong>Input:</strong> head = [1,8,9]<p>
-<p><strong>Output:</strong> [3,7,8]<p>
-<p><strong>Explanation:</strong> The figure above corresponds to the given linked list which represents the number 189. Hence, the returned linked list represents the number 189 * 2 = 378.<p>
+**Input:** head = [1,8,9]
+**Output:** [3,7,8]
+**Explanation:** The figure above corresponds to the given linked list which represents the number 189. Hence, the returned linked list represents the number 189 * 2 = 378.
 
 <h3><strong>Example 2:</strong><h3><br>
 <img src = "https://assets.leetcode.com/uploads/2023/05/28/example2.png">
