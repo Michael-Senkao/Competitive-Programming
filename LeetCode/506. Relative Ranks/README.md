@@ -5,10 +5,9 @@ The athletes are <strong>placed<strong> based on their scores, where the <code>1
 - The <code>1<sup>st</sup></code> place athlete's rank is <code>"Gold Medal"</code>.
 - The <code>2<sup>nd</sup></code> place athlete's rank is <code>"Silver Medal"</code>.
 - The <code>3<sup>rd</sup></code> place athlete's rank is <code>"Bronze Medal"</code>.
-- For the <code>4<sup>th</sup></code> place to the <code>n<sup>th</sup>,/code> place athlete, their rank is their placement number (i.e., the <code>x<sup>th</sup></code> place athlete's rank is <code>"x"</code>).
+- For the <code>4<sup>th</sup></code> place to the <code>n<sup>th</sup></code> place athlete, their rank is their placement number (i.e., the <code>x<sup>th</sup></code> place athlete's rank is <code>"x"</code>).
 Return an array <code>answer</code> of size <code>n</code> where <code>answer[i]</code> is the <strong>rank</strong> of the <code>i<sup>th</sup></code> athlete.
 
- 
 
 <strong>Example 1:</strong>
 
@@ -23,7 +22,6 @@ Return an array <code>answer</code> of size <code>n</code> where <code>answer[i]
 <strong>Explanation:</strong> The placements are [1st, 5th, 3rd, 2nd, 4th].
 
  
-
 <strong>Constraints:</strong>
 
 - <code>n == score.length</code>
