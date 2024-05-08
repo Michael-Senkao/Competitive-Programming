@@ -1,4 +1,4 @@
-<strong>**QUESTION**</strong>
+<strong>**QUESTION:**</strong>
 
 You are given an integer array <code>score</code> of size <code>n</code>, where <code>score[i]</code> is the score of the <code>ith</code> athlete in a competition. All the scores are guaranteed to be <strong>unique<strong>.
 
