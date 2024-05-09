@@ -1,4 +1,4 @@
-<h1><a href = "https://leetcode.com/problems/maximize-happiness-of-selected-children">3075. Maximize Happiness of Selected Children</a>
+<h1><a href = "https://leetcode.com/problems/maximize-happiness-of-selected-children">3075. Maximize Happiness of Selected Children</a></h1>
 
 You are given an array <code>happiness</code> of length <code>n</code>, and a <strong>positive</strong> integer <code>k</code>.
 
