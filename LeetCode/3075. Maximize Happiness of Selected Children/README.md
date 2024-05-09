@@ -20,17 +20,17 @@ In each turn, when you select a child, the <strong>happiness value</strong> of a
 The sum of the happiness values of the selected children is 3 + 1 = 4.
 ## Example 2:
 
-<strong>Input:</strong> happiness = [1,1,1,1], k = 2
-<strong>Output:</strong> 1
-<strong>Explanation:</strong> We can pick 2 children in the following way:
+**Input:** happiness = [1,1,1,1], k = 2<br>
+**Output:** 1<br>
+**Explanation:** We can pick 2 children in the following way:<br>
 - Pick any child with the happiness value == 1. The happiness value of the remaining children becomes [0,0,0].
 - Pick the child with the happiness value == 0. The happiness value of the remaining child becomes [0,0].
 The sum of the happiness values of the selected children is 1 + 0 = 1.
 ## Example 3:
 
-<strong>Input:</strong> happiness = [2,3,4,5], k = 1
-<strong>Output:</strong> 5
-<strong>Explanation:</strong> We can pick 1 child in the following way:
+<strong>Input:</strong> happiness = [2,3,4,5], k = 1<br>
+<strong>Output:</strong> 5<br>
+<strong>Explanation:</strong> We can pick 1 child in the following way:<br>
 - Pick the child with the happiness value == 5. The happiness value of the remaining children becomes [1,2,3].
 The sum of the happiness values of the selected children is 5.
  
@@ -39,4 +39,4 @@ The sum of the happiness values of the selected children is 5.
 
 - <code>1 <= n == happiness.length <= 2 * 105</code>
 - <code>1 <= happiness[i] <= 108</code>
-= <code>1 <= k <= n</code>
+- <code>1 <= k <= n</code>
