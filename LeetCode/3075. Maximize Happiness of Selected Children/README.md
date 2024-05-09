@@ -23,15 +23,15 @@ The sum of the happiness values of the selected children is 3 + 1 = 4.
 **Input:** happiness = [1,1,1,1], k = 2<br>
 **Output:** 1<br>
 **Explanation:** We can pick 2 children in the following way:<br>
-- Pick any child with the happiness value == 1. The happiness value of the remaining children becomes [0,0,0].
-- Pick the child with the happiness value == 0. The happiness value of the remaining child becomes [0,0].
+- Pick any child with the happiness value == 1. The happiness value of the remaining children becomes [0,0,0].<br>
+- Pick the child with the happiness value == 0. The happiness value of the remaining child becomes [0,0].<br>
 The sum of the happiness values of the selected children is 1 + 0 = 1.
 ## Example 3:
 
 <strong>Input:</strong> happiness = [2,3,4,5], k = 1<br>
 <strong>Output:</strong> 5<br>
 <strong>Explanation:</strong> We can pick 1 child in the following way:<br>
-- Pick the child with the happiness value == 5. The happiness value of the remaining children becomes [1,2,3].
+- Pick the child with the happiness value == 5. The happiness value of the remaining children becomes [1,2,3].<br>
 The sum of the happiness values of the selected children is 5.
  
 
