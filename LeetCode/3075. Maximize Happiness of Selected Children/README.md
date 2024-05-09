@@ -12,11 +12,11 @@ In each turn, when you select a child, the <strong>happiness value</strong> of a
 
 ## Example 1:
 
-<strong>Input:</strong> happiness = [1,2,3], k = 2
-<strong>Output:</strong> 4
-<strong>Explanation:</strong> We can pick 2 children in the following way:
-- Pick the child with the happiness value == 3. The happiness value of the remaining children becomes [0,1].
-- Pick the child with the happiness value == 1. The happiness value of the remaining child becomes [0]. Note that the happiness value cannot become less than 0.
+<strong>Input:</strong> happiness = [1,2,3], k = 2 <br>
+<strong>Output:</strong> 4<br>
+<strong>Explanation:</strong> We can pick 2 children in the following way:<br>
+- Pick the child with the happiness value == 3. The happiness value of the remaining children becomes [0,1].<br>
+- Pick the child with the happiness value == 1. The happiness value of the remaining child becomes [0]. Note that the happiness value cannot become less than 0.<br>
 The sum of the happiness values of the selected children is 3 + 1 = 4.
 ## Example 2:
 
