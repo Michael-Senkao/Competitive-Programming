@@ -2,7 +2,7 @@
 
 There is a car with <code>capacity</code> empty seats. The vehicle only drives east (i.e., it cannot turn around and drive west).
 
-You are given the integer <code>capacity</code> and an array <code>trips</code> where <code>trips[i] = [numPassengersi, fromi, toi]</code> indicates that the <code>i<sup>th</sup><code> trip has <code>numPassengersi</code> passengers and the locations to pick them up and drop them off are <code>fromi</code> and <code>toi</code> respectively. The locations are given as the number of kilometers due east from the car's initial location.
+You are given the integer <code>capacity</code> and an array <code>trips</code> where <code>trips[i] = [numPassengersi, fromi, toi]</code> indicates that the <code>i<sup>th</sup></code> trip has <code>numPassengersi</code> passengers and the locations to pick them up and drop them off are <code>fromi</code> and <code>toi</code> respectively. The locations are given as the number of kilometers due east from the car's initial location.
 
 Return <code>true</code> <em>if it is possible to pick up and drop off all passengers for all the given trips, or <code>false</code> otherwise.</em>
 
