@@ -1,15 +1,17 @@
 # [2331. Evaluate Boolean Binary Tree](https://leetcode.com/problems/evaluate-boolean-binary-tree)
 
-You are given the root of a full binary tree with the following properties:
+You are given the <code>root</code> of a <strong>full binary tree</strong> with the following properties:
 
-Leaf nodes have either the value 0 or 1, where 0 represents False and 1 represents True.
-Non-leaf nodes have either the value 2 or 3, where 2 represents the boolean OR and 3 represents the boolean AND.
-The evaluation of a node is as follows:
+- <strong>Leaf nodes</strong> have either the value <code>0</code> or <code>1</code>, where <code>0</code> represents <code>False</code> and <code>1</code> represents <code>True</code>.
+- <strong>Non-leaf nodes</strong> have either the value <code>2</code> or <code>3</code>, where <code>2</code> represents the boolean <code>OR</code> and <code>3</code> represents the boolean <code>AND</code>.<br>
 
-If the node is a leaf node, the evaluation is the value of the node, i.e. True or False.
-Otherwise, evaluate the node's two children and apply the boolean operation of its value with the children's evaluations.
-Return the boolean result of evaluating the root node.
+The <strong>evaluation</strong> of a node is as follows:
 
-A full binary tree is a binary tree where each node has either 0 or 2 children.
+- If the node is a leaf node, the evaluation is the <strong>value</strong> of the node, i.e. <code>True</code> or <code>False</code>.
+- Otherwise, <strong>evaluate</strong> the node's two children and <strong>apply</strong> the boolean operation of its value with the children's evaluations.
+  
+Return <em>the boolean result of evaluating the</em> <code>root</code> <em>node</em>.
 
-A leaf node is a node that has zero children.
+A <strong>full binary tree</strong> is a binary tree where each node has either <code>0</code> or <code>2</code> children.
+
+A <strong>leaf node</strong> is a node that has zero children.
