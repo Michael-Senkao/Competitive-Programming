@@ -1,4 +1,4 @@
-# [1685. Sum of Absolute Differences in a Sorted Array]()https://leetcode.com/problems/sum-of-absolute-differences-in-a-sorted-array
+## [1685. Sum of Absolute Differences in a Sorted Array]()https://leetcode.com/problems/sum-of-absolute-differences-in-a-sorted-array
 
 You are given an integer array <code>nums</code> sorted in <strong>non-decreasing</strong> order.
 
@@ -19,7 +19,7 @@ result[2] = |5-2| + |5-3| + |5-5| = 3 + 2 + 0 = 5.
 ### **Example 2:**
 <pre>
 <strong>Input:</strong>strong> nums = [1,4,6,8,10]
-<strong>Output:</strong>strong> [24,15,13,15,21]
+<strong>Output:</strong> [24,15,13,15,21]
  </pre>
 
 ### **Constraints:**
