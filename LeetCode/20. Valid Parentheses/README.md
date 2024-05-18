@@ -10,18 +10,20 @@ An input string is valid if:
 
  
 ## **Example 1:**
-
+<pre>
 <strong>Input:</strong> s = "()"
 <strong>Output:</strong> true
+ </pre>
 ## **Example 2:**
-
+<pre>
 <strong>Input:</strong> s = "()[]{}"
 <strong>Output:</strong> true
+ </pre>
 ## **Example 3:**
-
+<pre>
 <strong>Input:</strong> s = "(]"
 <strong>Output:</strong> false
- 
+ </pre>
 
 ## **Constraints:**
 
