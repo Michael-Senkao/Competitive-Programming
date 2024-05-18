@@ -1,5 +1,5 @@
-There are <code>n</code> people in a line queuing to buy tickets, where the <code>0th</code> person is at the <strong>front</strong> of the line and the <code>(n - 1)th</code> person is
-at the <strong>back</strong> of the line.
+There are <code>n</code> people in a line queuing to buy tickets, where the <code>0th</code> person is 
+at the <strong>front</strong> of the line and the <code>(n - 1)th</code> person is at the <strong>back</strong> of the line.
 
 You are given a <strong>0-indexed</strong> integer array <code>tickets</code> of length <code>n</code> where the number of tickets that the <code>ith</code> person would like to buy is 
 <code>tickets[i]</code>.
@@ -32,5 +32,5 @@ The person at position 0 has successfully bought 5 tickets and it took 4 + 1 + 1
 
 - <code>n == tickets.length</code>
 - <code>1 <= n <= 100</code>
-- 1 <code><= tickets[i] <= 100</code>
+- <code>1 <= tickets[i] <= 100</code>
 - <code>0 <= k < n</code>
