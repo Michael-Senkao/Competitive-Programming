@@ -13,14 +13,14 @@ It is <strong>guaranteed</strong> that every call to <code>ping</code> uses a st
 
 ### **Example 1:**
 <pre>
-<strong>Input</strong>strong>
+<strong>Input</strong>
 ["RecentCounter", "ping", "ping", "ping", "ping"]
 [[], [1], [100], [3001], [3002]]
   
-<strong>Output</strong>strong>
+<strong>Output</strong>
 [null, 1, 2, 3, 3]
 
-<strong>Explanation</strong>strong>
+<strong>Explanation</strong>
 RecentCounter recentCounter = new RecentCounter();
 recentCounter.ping(1);     // requests = [1], range is [-2999,1], return 1
 recentCounter.ping(100);   // requests = [1, 100], range is [-2900,100], return 2
