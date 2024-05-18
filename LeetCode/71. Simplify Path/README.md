@@ -1,16 +1,16 @@
 ## [71. Simplify Path](https://leetcode.com/problems/simplify-path)
 
-Given an absolute path for a Unix-style file system, which begins with a slash <code>'/'</code>, transform this path into its <strong>simplified canonical path</code>.
+Given an absolute path for a Unix-style file system, which begins with a slash <code>'/'</code>, transform this path into its <strong>simplified canonical path</strong>.
 
 In Unix-style file system context, a single period <code>'.'</code> signifies the current directory, a double period <code>".."</code> denotes moving up one directory 
 level, and multiple slashes such as <code>"//"</code> are interpreted as a single slash. In this problem, treat sequences of periods not covered by the 
-previous rules (like <code>"..."<code>) as valid names for files or directories.
+previous rules (like <code>"..."</code>) as valid names for files or directories.
 
 The simplified canonical path should adhere to the following rules:
 
-- It must start with a single slash <code>'/'<code>.
-- Directories within the path should be separated by only one slash <code>'/'<code>.
-- It should not end with a slash <code>'/'<code>, unless it's the root directory.
+- It must start with a single slash <code>'/'</code>.
+- Directories within the path should be separated by only one slash <code>'/'</code>.
+- It should not end with a slash <code>'/'</code>, unless it's the root directory.
 - It should exclude any single or double periods used to denote current or parent directories.
   
 Return the new path.
