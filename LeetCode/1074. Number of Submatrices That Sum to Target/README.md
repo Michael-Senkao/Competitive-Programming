@@ -7,4 +7,7 @@ A submatrix <code>x1, y1, x2, y2</code> is the set of all cells <code>matrix[x][
 Two submatrices <code>(x1, y1, x2, y2)</code> and <code>(x1', y1', x2', y2')</code> are different if they have some coordinate that is different: for example, if <code>x1 != x1'<code>.
 
 ### **Example 1:**
-> <img src = "https://assets.leetcode.com/uploads/2020/09/02/mate1.jpg" />
+<img src = "https://assets.leetcode.com/uploads/2020/09/02/mate1.jpg" />
+> **Input:** matrix = [[0,1,0],[1,1,1],[0,1,0]], target = 0
+  **Output:** 4
+  **Explanation:** The four 1x1 submatrices that only contain 0.
