@@ -7,6 +7,8 @@ Two submatrices <code>(x1, y1, x2, y2)</code> and <code>(x1', y1', x2', y2')</co
 
 ### **Example 1:**
 <img src = "https://assets.leetcode.com/uploads/2020/09/02/mate1.jpg" />
-**Input:** matrix = [[0,1,0],[1,1,1],[0,1,0]], target = 0<br>
-**Output:** 4<br>
-**Explanation:** The four 1x1 submatrices that only contain 0.
+<pre>
+<strong>Input:</strong> matrix = [[0,1,0],[1,1,1],[0,1,0]], target = 0<br>
+<strong>Output:</strong> 4<br>
+<strong>Explanation:</strong> The four 1x1 submatrices that only contain 0.
+  </pre>
