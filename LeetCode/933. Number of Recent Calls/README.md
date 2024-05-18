@@ -4,7 +4,7 @@ You have a <code>RecentCounter</code> class which counts the number of recent re
 
 Implement the <code>RecentCounter</code> class:
 
-- <code>RecentCounter()<code> Initializes the counter with zero recent requests.
+- <code>RecentCounter()</code> Initializes the counter with zero recent requests.
 - <code>int ping(int t)</code> Adds a new request at time <code>t</code>, where <code>t</code> represents some time in milliseconds, and returns the number of requests
   that has happened in the past <code>3000</code> milliseconds (including the new request). Specifically, return the number of requests that have
   happened in the inclusive range <code>[t - 3000, t]</code>.
