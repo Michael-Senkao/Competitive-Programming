@@ -1,7 +1,7 @@
 # [78. Subsets](https://leetcode.com/problems/subsets)
 
 Given an integer array <code>nums</code> of <strong>unique</strong> elements, <em>return all possible 
-[subsets]() (the power set)</em>.
+[subsets](https://en.wikipedia.org/wiki/Subset) (the power set)</em>.
 
 The solution set <strong>must not</strong> contain duplicate subsets. Return the solution in <strong>any order</strong>.
 
