@@ -16,14 +16,14 @@ Implement the <code>MyStack</code> class:
 
 ### **Example 1:**
 <pre>
-**Input:**
+<strong>Input:</strong>
 ["MyStack", "push", "push", "top", "pop", "empty"]
 [[], [1], [2], [], [], []]
 
-**Output:**
+<strong>Output:</strong>
 [null, null, null, 2, 2, false]
 
-**Explanation:**
+<strong>Explanation:</strong>
 MyStack myStack = new MyStack();
 myStack.push(1);
 myStack.push(2);
