@@ -1,6 +1,6 @@
 # [907. Sum of Subarray Minimums](https://leetcode.com/problems/sum-of-subarray-minimums)
 
-Given an array of integers <code>arr</code>, find the sum of <code>min(b)</code>, where <code>b</code> ranges over every (contiguous) subarray of <code>arr</code>. Since the answer may be large, return the answer <strong>modulo</strong> <code>109 + 7</code>.
+Given an array of integers <code>arr</code>, find the sum of <code>min(b)</code>, where <code>b</code> ranges over every (contiguous) subarray of <code>arr</code>. Since the answer may be large, return the answer <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.
 
 Example 1:
 <pre>
