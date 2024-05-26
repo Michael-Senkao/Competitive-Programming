@@ -25,8 +25,8 @@ victory and change the Dota2 game. The output should be <code>"Radiant"</code> o
 <strong>Explanation:</strong> 
 The first senator comes from Radiant and he can just ban the next senator's right in round 1. 
 And the second senator can't exercise any rights anymore since his right has been banned. 
-And in round 2, the first senator can just announce the victory since he is the only guy in the senate who can 
- vote.
+And in round 2, the first senator can just announce the victory since he is the only guy in the senate who 
+ can vote.
 </pre>
 
 ### **Example 2:**
@@ -37,8 +37,8 @@ And in round 2, the first senator can just announce the victory since he is the 
 The first senator comes from Radiant and he can just ban the next senator's right in round 1. 
 And the second senator can't exercise any rights anymore since his right has been banned. 
 And the third senator comes from Dire and he can ban the first senator's right in round 1. 
-And in round 2, the third senator can just announce the victory since he is the only guy in the senate who can 
- vote.
+And in round 2, the third senator can just announce the victory since he is the only guy in the senate who 
+ can vote.
  </pre>
 
 ### **Constraints:**
