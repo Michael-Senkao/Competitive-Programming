@@ -1,6 +1,6 @@
 # [101. Symmetric Tree](https://leetcode.com/problems/symmetric-tree)
 
-Given the <code>root</code> of a binary tree, <em>check whether it is a mirror of itself</code> (i.e., symmetric around its center).
+Given the <code>root</code> of a binary tree, <em>check whether it is a mirror of itself</em> (i.e., symmetric around its center).
 
 ### **Example 1:**
 <img src="https://assets.leetcode.com/uploads/2021/02/19/symtree1.jpg" />
