@@ -6,7 +6,8 @@ Player 1 and player 2 take turns, with player 1 starting first. Both players sta
 At each turn, the player takes one of the numbers from either end of the array (i.e., <code>nums[0]</code> or <code>nums[nums.length - 1]</code>) 
 which reduces the size of the array by <code>1</code>. The player adds the chosen number to their score. The game ends when there are no more elements in the array.
 
-Return <code>true</code> if Player 1 can win the game. If the scores of both players are equal, then player 1 is still the winner, and you should also return <code>true</code>. 
+Return <code>true</code> if Player 1 can win the game. If the scores of both players are equal, then player 1 
+is still the winner, and you should also return <code>true</code>. 
 You may assume that both players are playing optimally.
 
 ### **Example 1:**
