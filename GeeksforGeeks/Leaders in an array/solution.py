@@ -1,4 +1,5 @@
-#Function to find the leaders in the array.
+class Solution:
+    #Function to find the leaders in the array.
     def leaders(self, A, N):
         '''
         APPROACH: monotonic stack
