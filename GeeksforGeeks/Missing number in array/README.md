@@ -17,7 +17,7 @@ A[] = {6,1,2,8,3,4,7,10,5}
 <strong>Output:</strong> 9
 </pre>
 
-<strong>Expected Time Complexity:</strong> O(N)
+<strong>Expected Time Complexity:</strong> O(N) <br />
 <strong>Expected Auxiliary Space:</strong> O(1)
 
 
