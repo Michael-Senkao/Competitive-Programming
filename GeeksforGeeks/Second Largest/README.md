@@ -1,6 +1,6 @@
 # [Second Largest](https://www.geeksforgeeks.org/problems/second-largest3735/1)
 
-Given an array <code>Arr</code> of size <code>N</code>, print the <strong>second largest distinct element</code> from an array. 
+Given an array <code>Arr</code> of size <code>N</code>, print the <strong>second largest distinct element</strong> from an array. 
 If the second largest element <strong>doesn't</strong> exist then return <code>-1</code>.
 
 ### **Example 1:**
