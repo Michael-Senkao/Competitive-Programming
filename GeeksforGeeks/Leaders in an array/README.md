@@ -19,12 +19,12 @@ A[] = {16,17,4,3,5,2}
 n = 5
 A[] = {10,4,2,4,1}
 <strong>Output:</strong> 10 4 4 1
-<strong>Explanation:</strong> 1 is the rightmost element and 4 is the element which is greater than all the elements to its right. Similarly another 4 is the element that 
-  is equal to the greatest element to its right and 10 is the greatest element in the whole array.
+<strong>Explanation:</strong> 1 is the rightmost element and 4 is the element which is greater than all the elements to its right. 
+  Similarly another 4 is the element that is equal to the greatest element to its right and 10 is the greatest element in the whole array.
 
 <strong>Your Task:</strong>
-You don't need to read input or print anything. The task is to complete the function leader() which takes array A and n as input parameters and returns an array of 
-  leaders in order of their appearance.
+You don't need to read input or print anything. The task is to complete the function leader() which takes array A and n as input parameters and 
+  returns an array of leaders in order of their appearance.
 </pre>
 <strong>Expected Time Complexity:</strong> O(n)
 <strong>Expected Auxiliary Space:</strong> O(n)
