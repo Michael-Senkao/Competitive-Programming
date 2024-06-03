@@ -12,7 +12,7 @@ Arr[] = {12, 35, 1, 10, 34, 1}
 <strong>Explanation:</strong> The largest element of the array is 35 and the second largest elementis 34.
 </pre>
 ### **Example 2:**
-
+<pre>
 <strong>Input:</strong> 
 N = 3
 Arr[] = {10, 5, 10}
