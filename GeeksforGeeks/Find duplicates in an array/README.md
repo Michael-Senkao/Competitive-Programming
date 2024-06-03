@@ -33,5 +33,5 @@ Complete the function duplicates() which takes array a[] and n as input as param
 <strong>Expected Auxiliary Space:</strong> O(n).
 
 ### **Constraints:**
-- <code>1 <= N <= 105</code>
+- <code>1 <= N <= 10<sup>5</sup></code>
 - <code>0 <= A[i] <= N-1</code>, for each valid <code>i</code>
