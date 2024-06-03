@@ -1,6 +1,8 @@
 #Function to find the leaders in the array.
     def leaders(self, A, N):
-        #Code here
+        '''
+        APPROACH: monotonic stack
+        '''
         stack = []
         
         for num in A:
