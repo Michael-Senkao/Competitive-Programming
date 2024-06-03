@@ -10,8 +10,8 @@ The rightmost element is always a leader.
 n = 6
 A[] = {16,17,4,3,5,2}
 <strong>Output:</strong> 17 5 2
-<strong>Explanation:</strong> The first leader is 17 as it is greater than all the elements to its right.  Similarly, the next leader is 5. 
-  The right most element is always a leader so it is also included.
+<strong>Explanation:</strong> The first leader is 17 as it is greater than all the elements to its right.  Similarly, 
+  the next leader is 5. The right most element is always a leader so it is also included.
 </pre>
 ### **Example 2:**
 <pre>
@@ -19,8 +19,8 @@ A[] = {16,17,4,3,5,2}
 n = 5
 A[] = {10,4,2,4,1}
 <strong>Output:</strong> 10 4 4 1
-<strong>Explanation:</strong> 1 is the rightmost element and 4 is the element which is greater than all the elements to its right. 
-  Similarly another 4 is the element that is equal to the greatest element to its right and 10 is the greatest element in the whole array.
+<strong>Explanation:</strong> 1 is the rightmost element and 4 is the element which is greater than all the elements to its right. Similarly 
+  another 4 is the element that is equal to the greatest element to its right and 10 is the greatest element in the whole array.
 
 <strong>Your Task:</strong>
 You don't need to read input or print anything. The task is to complete the function leader() which takes array A and n as input parameters and 
