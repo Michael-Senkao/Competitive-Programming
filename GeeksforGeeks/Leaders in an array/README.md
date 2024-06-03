@@ -26,7 +26,7 @@ A[] = {10,4,2,4,1}
 You don't need to read input or print anything. The task is to complete the function leader() which takes array A and n as input 
   parameters and returns an array of leaders in order of their appearance.
 </pre>
-<strong>Expected Time Complexity:</strong> O(n)
+<strong>Expected Time Complexity:</strong> O(n) <br />
 <strong>Expected Auxiliary Space:</strong> O(n)
 
 ### **Constraints:**
