@@ -1,6 +1,8 @@
 class Solution:
     def duplicates(self, arr, n): 
-	   
+	   ''' 
+    		INTUITION: Find the frequency of each number in 'arr' in place
+   	   '''
 	   res = []
 	   for num in arr:
 	       num %= n # Get the actual value at current index
