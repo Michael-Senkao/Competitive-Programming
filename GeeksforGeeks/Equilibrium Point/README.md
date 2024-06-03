@@ -28,6 +28,7 @@ Since there's only element hence its only the equilibrium point.
 </pre>
 <strong>Your Task:</strong>
 The task is to complete the function <code>equilibriumPoint()</code> which takes the array and <code>n</code> as input parameters and returns the point of equilibrium. 
+
 <strong>Expected Time Complexity:</strong> O(n) <br />
 <strong>Expected Auxiliary Space:</strong> O(1)
 
