@@ -1,9 +1,9 @@
 # [Parenthesis Checker](https://www.geeksforgeeks.org/problems/parenthesis-checker2744/1)
 
-Given an expression string x. Examine whether the pairs and the orders of {,},(,),[,] are correct in exp.
-For example, the function should return 'true' for exp = [()]{}{[()()]()} and 'false' for exp = [(]).
+Given an expression string <code>x</code>. Examine whether the pairs and the orders of <code>{</code>,<code>}</cpde>,<code>(</code>,<code>)</code>,<code>[</code>,<code>]</code> are correct in exp.
+For example, the function should return <code>'true'</code> for exp = <code>[()]{}{[()()]()}</code> and <code>'false'</code> for exp = <code>[(])</code>.
 
-Note: The drive code prints "balanced" if function return true, otherwise it prints "not balanced".
+Note: The drive code prints <code>"balanced"</code> if function return true, otherwise it prints <code>"not balanced"</code>.
 
 ### **Example 1:**
 <pre>
