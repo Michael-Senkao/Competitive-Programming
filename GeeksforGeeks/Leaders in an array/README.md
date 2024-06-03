@@ -10,8 +10,8 @@ The rightmost element is always a leader.
 n = 6
 A[] = {16,17,4,3,5,2}
 <strong>Output:</strong> 17 5 2
-<strong>Explanation:</strong> The first leader is 17 as it is greater than all the elements to its right.  Similarly, the next leader is 5. The right most element 
-is always a leader so it is also included.
+<strong>Explanation:</strong> The first leader is 17 as it is greater than all the elements to its right.  Similarly, the next leader is 5. 
+  The right most element is always a leader so it is also included.
 </pre>
 ### **Example 2:**
 <pre>
