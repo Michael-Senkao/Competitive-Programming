@@ -16,6 +16,7 @@ Given a string <code>S</code>, check if it is <strong>palindrome</strong> or <st
 </pre>
 
 <strong>Your Task:</strong>
+
 You don't need to read input or print anything. Complete the function <code>isPalindrome()</code> which accepts string <code>S</code> 
 and returns an integer value <code>1</code> or <code>0</code>.
 
