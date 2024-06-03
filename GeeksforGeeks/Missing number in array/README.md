@@ -22,6 +22,6 @@ A[] = {6,1,2,8,3,4,7,10,5}
 
 
 ### **Constraints:**
-- <code>1 ≤ N ≤ 106</code>
-- <code>1 ≤ A[i] ≤ 106</code>
+- <code>1 ≤ N ≤ 10<sup>6</sup></code>
+- <code>1 ≤ A[i] ≤ 10<sup>6</sup></code>
 
