@@ -23,8 +23,8 @@ A[] = {10,4,2,4,1}
   another 4 is the element that is equal to the greatest element to its right and 10 is the greatest element in the whole array.
 
 <strong>Your Task:</strong>
-You don't need to read input or print anything. The task is to complete the function leader() which takes array A and n as input parameters and 
-  returns an array of leaders in order of their appearance.
+You don't need to read input or print anything. The task is to complete the function leader() which takes array A and n as input 
+  parameters and returns an array of leaders in order of their appearance.
 </pre>
 <strong>Expected Time Complexity:</strong> O(n)
 <strong>Expected Auxiliary Space:</strong> O(n)
