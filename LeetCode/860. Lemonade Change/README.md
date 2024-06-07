@@ -6,7 +6,7 @@ transaction is that the customer pays <code>$5</code>.
 
 Note that you do not have any change in hand at first.
 
-Given an integer array <code>bills</code> where <code>bills[i]</code> is the bill the <code>i<sup>th</sup><code> customer pays, return <code>true</code> <em>if you can provide every customer with 
+Given an integer array <code>bills</code> where <code>bills[i]</code> is the bill the <code>i<sup>th</sup></code> customer pays, return <code>true</code> <em>if you can provide every customer with 
 the correct change, or</em> <code>false</code> <em>otherwise</em>.
 
 ### **Example 1:**
