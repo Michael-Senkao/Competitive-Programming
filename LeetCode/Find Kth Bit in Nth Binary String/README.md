@@ -3,7 +3,7 @@
 Given two positive integers <code>n</code> and <code>k</code>, the binary string <code>S<sub>n</sub></code> is formed as follows:
 
 - <code>S1 = "0"</code>
-- <code>Si = Si - 1 + "1" + reverse(invert(Si - 1))</code> for <code>i > 1</ode>
+- <code>Si = Si - 1 + "1" + reverse(invert(Si - 1))</code> for <code>i > 1</code>
 
 Where <code>+</code> denotes the concatenation operation, <code>reverse(x)</code> returns the reversed string <code>x</code>, 
 and <code>invert(x)</code> inverts all the bits in <code>x</code> (<code>0</code> changes to <code>1</code> and <code>1</code> changes to <code>0</code>).
