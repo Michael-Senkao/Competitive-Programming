@@ -1,4 +1,4 @@
-# [Recursive Digit Sum]()
+# [Recursive Digit Sum](https://www.hackerrank.com/challenges/recursive-digit-sum)
 
 We define super digit of an integer <code>x</code> using the following rules:
 
