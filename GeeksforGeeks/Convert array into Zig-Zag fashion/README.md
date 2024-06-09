@@ -12,7 +12,8 @@ the output will be <code>1</code> else the output will be <code>0</code>.
 <pre>
   <strong>Input:</strong> n = 7, arr[] = {4, 3, 7, 8, 6, 2, 1}
   <strong>Output:</strong> 1
-  <strong>Explanation:</strong>  After modification the array will look like 3 < 7 > 4 < 8 > 2 < 6 > 1, the checker in the driver code will produce 1.
+  <strong>Explanation:</strong>  After modification the array will look like 3 < 7 > 4 < 8 > 2 < 6 > 1, the 
+    checker in the driver code will produce 1.
 </pre>
 <pre>
   <strong>Input:</strong> n = 5, arr[] = {4, 7, 3, 8, 2}
