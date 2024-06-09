@@ -20,7 +20,7 @@ the output will be <code>1</code> else the output will be <code>0</code>.
 <strong>Explanation:</strong> After modification the array will look like 4 < 7 > 3 < 8 > 2 hence output will be 1.
 </pre>
 
-<strong>Expected Time Complexity:</strong> O(n)
+<strong>Expected Time Complexity:</strong> O(n)<br />
 <strong>Expected Auxiliary Space:</strong> O(1)
 
 ### **Constraints:**
