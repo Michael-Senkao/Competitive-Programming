@@ -7,3 +7,22 @@ elements of the array in a <strong>zig-zag</strong> fashion so that the converte
 
 <strong>Note:</strong> Modify the given <code>arr[]</code> only, If your transformation is correct, 
 the output will be <code>1</code> else the output will be <code>0</code>. 
+
+### **Examples:**
+<pre>
+  <strong>Input:</strong> n = 7, arr[] = {4, 3, 7, 8, 6, 2, 1}
+  <strong>Output:</strong> 1
+  <strong>Explanation:</strong>  After modification the array will look like 3 < 7 > 4 < 8 > 2 < 6 > 1, the checker in the driver code will produce 1.
+</pre>
+<pre>
+  <strong>Input:</strong> n = 5, arr[] = {4, 7, 3, 8, 2}
+  <strong>Output:/strong> 1
+<strong>Explanation:</strong> After modification the array will look like 4 < 7 > 3 < 8 > 2 hence output will be 1.
+</pre>
+
+<strong>Expected Time Complexity:</strong> O(n)
+<strong>Expected Auxiliary Space:</strong> O(1)
+
+### **Constraints:**
+- <code>1 <= n <= 10<sup>6</sup></code>
+- <code>0 <= arr<sub>i</sub> <= 10<sup>9</sup></code>
