@@ -8,7 +8,8 @@ A parentheses string is valid if and only if:
   
 You are given a parentheses string <code>s</code>. In one move, you can insert a parenthesis at any position of the string.
 
-- For example, if <code>s = "()))"</code>, you can insert an opening parenthesis to be "(()))" or a closing parenthesis to be <code>"())))"</code>.
+- For example, if <code>s = "()))"</code>, you can insert an opening parenthesis to be "(()))" or a closing parenthesis to
+  be <code>"())))"</code>.
   
 Return <em>the minimum number of moves required to make <code>s</code> valid</em>.
 
