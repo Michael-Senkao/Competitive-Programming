@@ -21,4 +21,4 @@ a triangle</em>.
 ### **Constraints:**
 
 - <code>1 <= nums.length <= 1000</code>
-- 0 <= nums[i] <= 1000</code>
+- <code>0 <= nums[i] <= 1000</code>
