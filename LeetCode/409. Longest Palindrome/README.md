@@ -20,5 +20,5 @@ Letters are <strong>case sensitive</strong>, for example, <code>"Aa"</code> is n
 
 ### **Constraints:**
 
--<code> 1 <= s.length <= 2000</code>
+- <code> 1 <= s.length <= 2000</code>
 - <code>s</code> consists of lowercase <strong>and/or</strong> uppercase English letters only.
