@@ -5,7 +5,7 @@ array <code>points</code> where <code>points[i] = [x<sub>start</sub>, x<sub>end<
 You do not know the exact y-coordinates of the balloons.
 
 Arrows can be shot up <strong>directly vertically</strong> (in the positive y-direction) from different points along the x-axis. 
-A balloon with <code>x<sub>start</sub></code> and <code>x<sub>end</sub></code> is <strong>burst</strong> by an arrow shot at <code>x</code> if <code>x<sub>start</sub> <= x <= <code>x<sub>end</sub></code>. There is <strong>no limit</strong> to the number of arrows 
+A balloon with <code>x<sub>start</sub></code> and <code>x<sub>end</sub></code> is <strong>burst</strong> by an arrow shot at <code>x</code> if <code>x<sub>start</sub> <= x <= x<sub>end</sub></code>. There is <strong>no limit</strong> to the number of arrows 
 that can be shot. A shot arrow keeps traveling up infinitely, bursting any balloons in its path.
 
 Given the array <code>points</code>, return <em>the <strong>minimum</strong> number of arrows that must be shot to burst all balloons</em>.
