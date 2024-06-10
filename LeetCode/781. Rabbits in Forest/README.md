@@ -24,5 +24,5 @@ The smallest possible number of rabbits in the forest is therefore 5: 3 that ans
 
 ### **Constraints:**
 
-- </code>1 <= answers.length <= 1000</code>
+- <code>1 <= answers.length <= 1000</code>
 - <code>0 <= answers[i] < 1000</code>
