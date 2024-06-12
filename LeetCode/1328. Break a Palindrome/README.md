@@ -13,14 +13,16 @@ a has a character strictly smaller than the corresponding character in <code>b</
 <pre>
 <strong>Input:</strong> palindrome = "abccba"
 <strong>Output:</strong> "aaccba"
-<strong>Explanation:</strong> There are many ways to make "abccba" not a palindrome, such as "zbccba", "aaccba", and "abacba".
+<strong>Explanation:</strong> There are many ways to make "abccba" not a palindrome, such as "zbccba", "aaccba", 
+  and "abacba".
 Of all the ways, "aaccba" is the lexicographically smallest.
 </pre>
 ### **Example 2:**
 <pre>
 <strong>Input:</strong> palindrome = "a"
 <strong>Output:</strong> ""
-<strong>Explanation:</strong> There is no way to replace a single character to make "a" not a palindrome, so return an empty string.
+<strong>Explanation:</strong> There is no way to replace a single character to make "a" not a palindrome, so return an 
+  empty string.
 </pre>
 ### **Constraints:**
 
