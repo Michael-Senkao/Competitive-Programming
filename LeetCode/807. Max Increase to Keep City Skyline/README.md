@@ -27,6 +27,7 @@ gridNew = [ [8, 4, 8, 7],
             [9, 4, 8, 7],
             [3, 3, 3, 3] ]
 </pre>
+
 ### **Example 2:**
 <pre>
 <strong>Input:</strong> grid = [[0,0,0],[0,0,0],[0,0,0]]
