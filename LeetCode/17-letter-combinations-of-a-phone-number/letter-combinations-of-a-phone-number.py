@@ -8,11 +8,11 @@ class Solution:
 
         def backtrack(index, current):
             if index >= n:
-                if current:
-                    res.append(current)
+                res.append(current)
                 return
             for letter in keys[digits[index]]:
                 backtrack(index + 1, current + letter)
-        backtrack(0, "")
+        if digits:
+            backtrack(0, "")
         return res
         
