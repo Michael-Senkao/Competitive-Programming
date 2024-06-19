@@ -1,10 +1,14 @@
 class Solution:
     def mySqrt(self, x: int) -> int:
-
-        def search(num):
-            if num*num > x:
-                return num - 1
-            return search(num + 1)
-
-        return search(1)
-        
+        left = 0
+        right = x
+        while left <= right:
+            mid = (left + right) // 2
+            if mid * mid < x:
+                left = mid + 1
+            elif mid * mid > x:
+                right = mid -1
+            else:
+                return mid
+            
+        return right
