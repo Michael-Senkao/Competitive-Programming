@@ -6,8 +6,6 @@ class Solution:
             count = 1
             current = 0
             for weight in weights:
-                if weight > maxCapacity:
-                    return False
                 current += weight
                 if current > maxCapacity:
                     count += 1
@@ -16,8 +14,7 @@ class Solution:
             return count <= days
         
         n = len(weights)
-        total = sum(weights)
-        l,r = 1, total
+        l,r = max(weights), sum(weights)
 
         while l < r:
             mid = l + (r - l)//2
