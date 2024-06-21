@@ -1,30 +1,24 @@
 class Solution:
-    def maxSatisfied(
-        self, customers: List[int], grumpy: List[int], minutes: int
-    ) -> int:
-        n = len(customers)
-        unrealized_customers = 0
-
-        # Calculate initial number of unrealized customers in first 'minutes' window
-        for i in range(minutes):
-            unrealized_customers += customers[i] * grumpy[i]
-
-        max_unrealized_customers = unrealized_customers
-
-        # Slide the 'minutes' window across the rest of the customers array
-        for i in range(minutes, n):
-            
-            unrealized_customers += customers[i] * grumpy[i]
-            unrealized_customers -= customers[i - minutes] * grumpy[i - minutes]
-
-            # Update the maximum unrealized customers
-            max_unrealized_customers = max(
-                max_unrealized_customers, unrealized_customers
-            )
-
-        total_customers = max_unrealized_customers
-
+    def maxSatisfied(self, customers: List[int], grumpy: List[int], minutes: int) -> int:
+        n=len(customers)
+        total_unsatisfied = 0
+        satisfied = 0
         for i in range(n):
-            total_customers += customers[i] * (1 - grumpy[i])
+            total_unsatisfied += customers[i] if grumpy[i]==1 else 0
+            satisfied += customers[i] if grumpy[i]==0 else 0
+        
+        window_sum = 0
+        max_unsatisfied = 0
+        left,right = 0,0
 
-        return total_customers
+        while right < n:
+            window_sum += customers[right] if grumpy[right]==1 else 0
+            
+            while right - left >= minutes:
+                if grumpy[left]==1:
+                    window_sum -= customers[left]
+                left += 1
+            max_unsatisfied = max(max_unsatisfied, window_sum)
+            right += 1
+        
+        return satisfied + max_unsatisfied
