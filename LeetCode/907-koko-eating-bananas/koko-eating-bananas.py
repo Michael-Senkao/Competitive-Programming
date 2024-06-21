@@ -7,7 +7,7 @@ class Solution:
             while i < n and count <= h:
                 count += ceil(piles[i]/k)
                 i += 1
-            return i>=n and count <= h
+            return count <= h
         
         l,r = 1, max(piles)
 
