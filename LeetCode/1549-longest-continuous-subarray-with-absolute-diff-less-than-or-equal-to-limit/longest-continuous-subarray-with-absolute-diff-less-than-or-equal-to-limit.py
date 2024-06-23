@@ -8,10 +8,10 @@ class Solution:
         left, right = 0,0
         res = 0
         while right < n:
-            heappush(maximum,(-1*nums[right], right))
+            heappush(maximum,(-nums[right], right))
             heappush(minimum,(nums[right], right))
 
-            while -1*maximum[0][0] - minimum[0][0] > limit:
+            while -maximum[0][0] - minimum[0][0] > limit:
                 left += 1
                 while minimum[0][1] < left:
                     heappop(minimum)
