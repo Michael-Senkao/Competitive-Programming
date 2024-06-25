@@ -42,7 +42,6 @@ For each test case in a separate line, print the minimum possible number of oper
 ### **Example:**
 <pre>
   <strong>input:</strong>
-  <pre>
     4
     8
     6 5 7 8 4 3 1 2
@@ -52,12 +51,10 @@ For each test case in a separate line, print the minimum possible number of oper
     1
     8
     7 8 4 3 1 2 6 5
-  </pre>
-  #### **output:**
-  <pre>
+  
+  <strong>output:</strong>
     4
     -1
     0
     -1
-  </pre>
 </pre>
