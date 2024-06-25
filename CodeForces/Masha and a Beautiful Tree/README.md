@@ -32,7 +32,7 @@ The first line contains single integer <code>t (1 ≤ t ≤ 10<sup>4</sup>)</cod
 
 In each test case, the first line contains an integer <code>m (1≤m≤262144)</code>, which is a power of two  — the size of the permutation <code>p</code>.
 
-The second line contains m integers: <code>p<sub>1</sub>,p<sub>2</sub>,…,p<sub>m</sub> (1≤p<sub>i</sub>≤m)<code> — the permutation <code>p</code>.
+The second line contains m integers: <code>p<sub>1</sub>,p<sub>2</sub>,…,p<sub>m</sub> (1≤p<sub>i</sub>≤m)</code> — the permutation <code>p</code>.
 
 It is guaranteed that the sum of <code>m</code> over all test cases does not exceed <code>3⋅10<sup>5</sup></code>.
 
@@ -41,7 +41,7 @@ For each test case in a separate line, print the minimum possible number of oper
 
 ### **Example:**
 <pre>
-  #### **input:**
+  <strong>input:</strong>
   <pre>
     4
     8
