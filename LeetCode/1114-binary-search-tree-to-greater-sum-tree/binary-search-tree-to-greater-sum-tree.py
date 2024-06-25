@@ -10,12 +10,13 @@ class Solution:
         def helper(node):
             if not node:
                 return
+            nonlocal currSum
             helper(node.right)
-            value[0] += node.val
-            node.val = value[0]
+            currSum+= node.val
+            node.val = currSum
             helper(node.left)
         
-        value = [0]
+        currSum = 0
         helper(root)
         
         return root
