@@ -14,5 +14,6 @@ and <code><em>[1,3,4]</em></code> is also not a permutation (<code><em>n = 3</em
 Let's enumerate <code><em>m</em></code> leaves of this tree from left to right. The leaf with the number <code><em>i</em></code> contains the value <code><em>p<sub>i</sub> (1 ≤ i ≤ m)</em></code>.
 
 For example, if <code><em>n = 2</em></code>, <code><em>p = [3,1,4,2]</em></code>, the tree will look like this:
+
 <img src="https://espresso.codeforces.com/7659f6baa10b482f16f752446d8296b98fd6ae64.png" />
 
