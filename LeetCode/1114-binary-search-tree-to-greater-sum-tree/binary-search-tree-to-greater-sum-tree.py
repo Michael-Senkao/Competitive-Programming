@@ -7,14 +7,15 @@
 class Solution:
     def bstToGst(self, root: TreeNode) -> TreeNode:
 
-        def helper(node, parent_sum):
+        def helper(node):
             if not node:
-                return 0
-            right_sum = helper(node.right, parent_sum)
-            temp = node.val
-            node.val = node.val + right_sum + parent_sum
-            left_sum = helper(node.left, node.val)
-            return temp + left_sum + right_sum
+                return
+            helper(node.right)
+            value[0] += node.val
+            node.val = value[0]
+            helper(node.left)
         
-        helper(root, 0)
+        value = [0]
+        helper(root)
+        
         return root
