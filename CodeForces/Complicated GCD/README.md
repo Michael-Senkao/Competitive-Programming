@@ -15,12 +15,15 @@ Output one integer — <strong>greatest common divisor</strong> of all integers 
 
 ### **Examples:**
 <pre>
-  inputCopy
+<strong>input:</strong>
 1 2
+  
 <strong>output:</strong>
 1
+  
 <strong>input:</strong>
 61803398874989484820458683436563811772030917980576 61803398874989484820458683436563811772030917980576
+  
 <strong>output:</strong>
 61803398874989484820458683436563811772030917980576
 </pre>
