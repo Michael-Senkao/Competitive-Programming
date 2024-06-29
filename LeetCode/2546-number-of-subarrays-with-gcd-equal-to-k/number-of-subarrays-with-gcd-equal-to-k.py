@@ -11,5 +11,6 @@ class Solution:
             for j in range(i, n):
                 curr_gcd = gcd(curr_gcd, nums[j])
                 count += curr_gcd == k
+                if curr_gcd < k: break
 
         return count
