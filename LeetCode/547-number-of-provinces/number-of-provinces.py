@@ -1,17 +1,25 @@
 class UnionFind:
     def __init__(self, size):
-        self.parent = [i for i in range(size)]
-    
-    def find(self, city):
-        if city == self.parent[city]:
-            return city
-        return self.find(self.parent[city])
-    def union(self, city1, city2):
-        root1 = self.find(city1)
-        root2 = self.find(city2)
-        if root1 != root2:
-            self.parent[root2] = root1
+        self.root = {i:i for i in range(size)}
+        self.rank = [0]*size
 
+    def find(self, node):
+        if self.root[node] == node:
+            return node
+        return self.find(self.root[node])
+    
+    def union(self, a, b):
+        parent_a = self.find(a)
+        parent_b = self.find(b)
+        if parent_a != parent_b:
+            if self.rank[parent_a] > self.rank[parent_b]:
+                self.root[parent_b] = parent_a
+            elif self.rank[parent_b] > self.rank[parent_a]:
+                self.root[parent_a] = parent_b
+            else:
+                self.root[parent_b] = parent_a
+                self.rank[parent_a] += 1
+        
 
 class Solution:
     def findCircleNum(self, isConnected: List[List[int]]) -> int:
@@ -23,8 +31,7 @@ class Solution:
             for j in range(n):
                 if isConnected[i][j]:
                     x.union(i, j)
-        print(x.parent)
-        for p in x.parent:
-
-            province.add(x.find(p))
+        print(x.root)
+        for node,parent in x.root.items():
+            province.add(x.find(parent))
         return len(province)
