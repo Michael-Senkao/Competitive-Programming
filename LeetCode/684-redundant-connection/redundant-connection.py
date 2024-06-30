@@ -1,7 +1,7 @@
 class UnionFind:
     def __init__(self, size = 0):
-        self.root = {i:i for i in range(1,size+1)}
-        self.rank = [0]*(size+1)
+        self.root = {i:i for i in range(size)}
+        self.rank = [0]*size
 
     def find(self, node):
         if self.root[node] == node:
@@ -28,7 +28,7 @@ class Solution:
         n = len(edges)
         graph = UnionFind(n)
         for u,v in edges:
-            if not graph.union(u,v):
+            if not graph.union(u-1,v-1):
                 return [u,v]
 
         
