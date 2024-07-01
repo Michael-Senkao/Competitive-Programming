@@ -4,13 +4,14 @@ class Solution:
             return 0
 
         copy = 1
-        res = 0
+        res = 1
         screen = 1
 
         while screen < n:
             screen += copy
             res += 1
-            if n % screen == 0:
+            if screen < n and n % screen == 0:
                 copy = screen
                 res += 1
+            print(res)
         return res
