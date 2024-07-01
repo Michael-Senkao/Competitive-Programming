@@ -13,5 +13,4 @@ class Solution:
             if screen < n and n % screen == 0:
                 copy = screen
                 res += 1
-            print(res)
         return res
