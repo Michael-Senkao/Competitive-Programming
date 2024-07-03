@@ -2,7 +2,6 @@ class Solution:
     def maximalNetworkRank(self, n: int, roads: List[List[int]]) -> int:
 
         adjList = defaultdict(set)
-        
         res = 0
 
         for u,v in roads:
