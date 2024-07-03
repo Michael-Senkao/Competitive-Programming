@@ -2,7 +2,7 @@
 
 Create an undirected graph that supports the next operations:
 
-1. <code>AddEdge(u, v)</code< - add to the graph an edge between the vertices <code>(u, v)</code>;
+1. <code>AddEdge(u, v)</code> - add to the graph an edge between the vertices <code>(u, v)</code>;
 
 2. <code>Vertex(u)</code> - print the list of vertices, adjacent with the vertex <code>u</code>.
 
