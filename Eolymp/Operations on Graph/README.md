@@ -15,7 +15,7 @@ The next line contains the number of operations <code>k</code> <code>(0 â‰¤ k â‰
 Each next line describes the operation in format: <code>"1 <number> <number>"</code> or <code>"2 <number>"</code>, representing 
 respectively the operation <code>AddEdge(u, v)</code> and <code>Vertex(u)</code>.
 
-It is guaranteed that the total amount of numbers to be printed during all operations Vertex, does not exceed <code>2 * 10<sup>5</sup>.
+It is guaranteed that the total amount of numbers to be printed during all operations Vertex, does not exceed <code>2 * 10<sup>5</sup></code>.
 
 ### **Output:**
 
