@@ -1,7 +1,7 @@
 class Solution:
     def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
         def dfs(r, c):
-            if 0 <= r < m and 0 <= c < n and image[r][c] == prevColor and (r,c) not in visited:
+            if 0 <= r < m and 0 <= c < n and image[r][c] == prevColor and image[r][c] != color:
                 visited.add((r,c))
                 image[r][c] = color
                 dfs(r+1, c)
