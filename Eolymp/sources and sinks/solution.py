@@ -11,8 +11,5 @@ for i in range(n):
     else:
         sources.append(i + 1)
 
-print(len(sources), end=" ")
-for vertex in sources: print(vertex, end=" ")
-print()
-print(len(sinks), end=" ")
-for vertex in sinks: print(vertex, end=" ")
+print(len(sources), *sources)
+print(len(sinks), *sinks)
