@@ -16,7 +16,7 @@ class Solution:
             return sum + graph[e_id][0]
 
 
-        graph = defaultdict(list)
+        graph = {}
         for employee in employees:
             graph[employee.id] = [employee.importance] + employee.subordinates
 
