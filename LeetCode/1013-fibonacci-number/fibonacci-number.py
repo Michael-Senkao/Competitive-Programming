@@ -1,10 +1,14 @@
 class Solution:
-    memo = [0, 1]
+    
     def fib(self, n: int) -> int:
-        if n < 2:
-            return n
+        def dp(n):
+            if n < 2:
+                return n
+            
+            if len(memo) <= n:
+                memo.append(dp(n-1) + dp(n-2))
+            return memo[n]
         
-        if len(self.memo) <= n:
-            self.memo.append(self.fib(n-1) + self.fib(n-2))
-        return self.memo[n]
+        memo = [0, 1]
+        return dp(n)
         
