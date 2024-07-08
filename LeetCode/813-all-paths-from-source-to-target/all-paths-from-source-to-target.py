@@ -10,8 +10,8 @@ class Solution:
             if node == n-1:
                 res.append(path)
                 return
-            for node in graph[node]:
-                dfs(node, path + [node])
+            for neighbor in graph[node]:
+                dfs(neighbor, path + [neighbor])
         
         dfs(0, [0])
         return res
