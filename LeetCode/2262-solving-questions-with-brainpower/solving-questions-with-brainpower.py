@@ -16,12 +16,12 @@ class Solution:
         #     return memo[index]
 
         n = len(questions)
-        dp = [0 for _ in range(n+1)]
+        dp = [0 for _ in range(n)]
 
         # Bottom-Up DP
         for i in range(n-1,-1,-1):
-            next = min(i + questions[i][1] + 1,n)
-            pick = dp[next] + questions[i][0]
-            notpick = dp[i+1]
+            nextIndex = i + questions[i][1] + 1
+            pick = dp[nextIndex] + questions[i][0] if nextIndex < n else questions[i][0]
+            notpick = dp[i+1] if i+1 < n else 0
             dp[i] = max(pick,notpick)
         return dp[0]
