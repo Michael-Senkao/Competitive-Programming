@@ -31,8 +31,8 @@ class Solution:
             return memo[i][j]
 
         memo = [[0 for _ in range(cols)] for _ in range(rows)]
-        # memo[0][0] = 1 if obstacleGrid[0][0] != 1 else 0
+        
         memo[0][0] = dp(0,0)
-        print(memo)
+        
         return memo[0][0]
             
