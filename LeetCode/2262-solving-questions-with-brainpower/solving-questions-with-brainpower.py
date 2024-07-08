@@ -8,7 +8,6 @@ class Solution:
             if memo[index]:
                 return memo[index]
             
-            print("solving...")
             solve = questions[index][0] + dp(index + questions[index][1] + 1)
             not_solve = dp(index + 1)
 
@@ -16,8 +15,11 @@ class Solution:
             return memo[index]
 
         n = len(questions)
-        memo = [0 for _ in range(n)]
+        dp = [0 for _ in range(n+1)]
 
-        dp(0)
-        print(memo)
-        return max(memo)
+        for i in range(n-1,-1,-1):
+            next = min(i + questions[i][1] + 1,n)
+            pick = dp[next] + questions[i][0]
+            notpick = dp[i+1]
+            dp[i] = max(pick,notpick)
+        return dp[0]
