@@ -9,5 +9,5 @@ class Solution:
                     stack.pop()
             elif log != "./":
                 stack.append(log)
-        print(stack)
+        
         return len(stack)
