@@ -2,12 +2,11 @@ class ThroneInheritance:
 
     def __init__(self, kingName: str):
         self.root = kingName
-        self.family = {kingName: []}
+        self.family = defaultdict(list)
         self.dead = set()
 
     def birth(self, parentName: str, childName: str) -> None:
         self.family[parentName].append(childName)
-        self.family[childName] = []
 
     def death(self, name: str) -> None:
         self.dead.add(name)
