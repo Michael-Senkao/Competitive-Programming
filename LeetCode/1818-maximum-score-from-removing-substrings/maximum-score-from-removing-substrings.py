@@ -2,25 +2,25 @@ class Solution:
     def maximumGain(self, s: str, x: int, y: int) -> int:
         
         stack = []
-        maxValue=min_value=max_string=min_string = None
-        ans = 0
+        max_end_char = 'b' if x > y else 'a'
+        max_start_char = 'b' if max_end_char == 'a' else 'a'
+        max_start,max_end = 0,0
+        max_value,min_value = max(x,y),min(x,y)
+        total = 0
 
-        if x > y:
-            max_value,min_value = x,y
-            max_string,min_string = "ab","ba"
-        else:
-            max_value,min_value = y,x
-            max_string,min_string = "ba","ab"
-        
         for ch in s:
-            if ch not in {'a','b'}:
-                ans += (min(stack.count('a'), stack.count('b'))*min_value)
-                stack = []
-            elif stack and stack[-1] + ch == max_string:
-                ans += max_value
-                stack.pop()
+            if ch == max_end_char:
+                if max_start > 0:
+                    total += max_value
+                    max_start -= 1
+                else:
+                    max_end += 1
+            elif ch == max_start_char:
+                max_start += 1
             else:
-                stack.append(ch)
-        ans += (min(stack.count('a'), stack.count('b'))*min_value)
-        return ans
+                total += min(max_start, max_end)*min_value
+                max_start,max_end = 0,0
+                
+        total += min(max_start, max_end)*min_value
+        return total
 
