@@ -2,16 +2,20 @@ class Solution:
     def countSubTrees(self, n: int, edges: List[List[int]], labels: str) -> List[int]:
         def dfs(node):
             if node in visited:
-                return ""
+                return defaultdict(int)
             
             visited.add(node)
-            label = labels[node]
-            sub = label[::]
+            curr_label = labels[node]
+            counts = defaultdict(int)
+
             for neighbor in adj[node]:
-                sub += dfs(neighbor)
+                result = dfs(neighbor)
+                for label,count in result.items():
+                    counts[label] += count
             
-            ans[node] = sub.count(label)
-            return sub
+            counts[curr_label] += 1
+            ans[node] = counts[curr_label]
+            return counts
 
             
 
