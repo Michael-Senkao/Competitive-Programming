@@ -30,16 +30,15 @@ class LockingTree:
             return False
         descendents = set()
         q = deque([num])
-        flag = False
+    
         while q:
             curr = q.popleft()
             for child in self.descendants[curr]:
                 if child in self.locked:
-                    flag = True
-                descendents.add(child)
+                    descendents.add(child)
                 q.append(child)
        
-        if not flag:
+        if not descendents:
             return False
 
         parent = self.parents[num]
@@ -49,8 +48,7 @@ class LockingTree:
             return False
         
         for child in descendents:
-            if child in self.locked:
-                del self.locked[child]
+            del self.locked[child]
         self.locked[num] = user
         return True
 
