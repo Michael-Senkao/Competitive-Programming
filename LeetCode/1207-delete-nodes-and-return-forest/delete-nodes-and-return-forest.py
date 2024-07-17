@@ -9,18 +9,19 @@ class Solution:
         def dfs(node):
             if not node:
                 return None
-            if node.val in delete:
-                left = dfs(node.left)
-                right = dfs(node.right)
-                if left: 
+
+            left = dfs(node.left)
+            right = dfs(node.right)
+            if node.val not in delete:
+                node.left = left
+                node.right = right
+                return node
+            else:
+                if left:
                     res.append(left)
-                if right: 
+                if right:
                     res.append(right)
                 return None
-            else:
-                node.left = dfs(node.left)
-                node.right = dfs(node.right)
-                return node
 
         delete = set(to_delete)
         res = []
