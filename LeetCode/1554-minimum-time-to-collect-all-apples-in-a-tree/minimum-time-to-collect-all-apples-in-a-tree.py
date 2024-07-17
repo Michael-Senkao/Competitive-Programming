@@ -9,7 +9,7 @@ class Solution:
             
             if (hasApple[node] or res > 0) and node != 0:
                 res += 1
-            # print(node, res)
+    
             return res
 
         
@@ -20,4 +20,5 @@ class Solution:
             adj[u].append(v)
             adj[v].append(u)
 
-        return dfs(0)*2
+        result = dfs(0)
+        return result*2
