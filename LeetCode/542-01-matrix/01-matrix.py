@@ -11,17 +11,25 @@ class Solution:
             for j in range(cols):
                 if mat[i][j] == 0:
                     q.append((i,j, 0))
+                    visited.add((i,j))
         
         while q:
             i,j,distance = q.popleft()
-            if i < 0 or j < 0 or i >= rows or j >= cols or (i,j) in visited:
+            if i < 0 or j < 0 or i >= rows or j >= cols:
                 continue
-            visited.add((i,j))
             result[i][j] = distance
-            q.append((i, j+1, distance + 1))
-            q.append((i, j -1, distance + 1))
-            q.append((i+1, j, distance + 1))
-            q.append((i-1, j, distance + 1))
+            if (i, j+1) not in visited:
+                q.append((i, j+1, distance + 1))
+                visited.add((i,j+1))
+            if (i, j-1) not in visited:
+                q.append((i, j -1, distance + 1))
+                visited.add((i,j-1))
+            if (i+1, j) not in visited:
+                q.append((i+1, j, distance + 1))
+                visited.add((i+1,j))
+            if (i-1, j) not in visited:
+                q.append((i-1, j, distance + 1))
+                visited.add((i-1,j))
 
 
         return result
