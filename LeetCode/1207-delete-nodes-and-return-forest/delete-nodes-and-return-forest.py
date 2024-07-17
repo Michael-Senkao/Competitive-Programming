@@ -9,22 +9,23 @@ class Solution:
         def dfs(node):
             if not node:
                 return None
-            if node.val in to_delete:
+            if node.val in delete:
                 left = dfs(node.left)
                 right = dfs(node.right)
-                if left: res.append(left)
-                if right: res.append(right)
+                if left: 
+                    res.append(left)
+                if right: 
+                    res.append(right)
                 return None
             else:
-
                 node.left = dfs(node.left)
                 node.right = dfs(node.right)
                 return node
 
-        to_delete = set(to_delete)
+        delete = set(to_delete)
         res = []
-        x = dfs(root)
-        if x:
-            res.append(x)
-        # print(res)
+        root = dfs(root)
+        if root:
+            res.append(root)
+        
         return res
