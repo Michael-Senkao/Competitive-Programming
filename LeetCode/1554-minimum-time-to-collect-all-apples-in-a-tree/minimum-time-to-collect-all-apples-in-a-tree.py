@@ -7,7 +7,7 @@ class Solution:
                 if nei not in visited:
                     res += dfs(nei)
             
-            if (hasApple[node] or res > 0) and node != 0:
+            if hasApple[node] or res > 0:
                 res += 1
     
             return res
@@ -20,5 +20,5 @@ class Solution:
             adj[u].append(v)
             adj[v].append(u)
 
-        result = dfs(0)
-        return result*2
+        result = dfs(0) - 1
+        return result*2 if result > 0 else 0
