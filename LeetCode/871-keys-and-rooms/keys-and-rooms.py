@@ -1,17 +1,16 @@
 class Solution:
     def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
         
-        n = len(rooms)
-        visited = set()
-        visited.add(0)
-        q = deque()
-        q.append(0)
+        q = deque([0])
+        visited = set([0])
+        
 
         while q:
-            current = q.popleft()
-            for key in rooms[current]:
-                if key not in visited:
-                    q.append(key)
-                    visited.add(key)
+            curr = q.popleft()
+            for room in rooms[curr]:
+                if room not in visited:
+                    visited.add(room)
+                    q.append(room)
 
-        return len(visited) == n
+
+        return len(visited) == len(rooms)
