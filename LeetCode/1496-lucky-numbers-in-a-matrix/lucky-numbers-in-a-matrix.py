@@ -17,5 +17,6 @@ class Solution:
                 num = matrix[i][j]
                 if num == minRows[i] and num == maxCols[j]:
                     res.append(num)
+                    return res
 
         return res
