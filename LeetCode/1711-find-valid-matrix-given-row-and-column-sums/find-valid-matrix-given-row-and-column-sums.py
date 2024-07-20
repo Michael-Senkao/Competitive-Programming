@@ -6,9 +6,10 @@ class Solution:
 
         for row in range(rows):
             for col in range(cols):
-                if rowSum[row] > 0 and colSum[col]:
-                    minimum = min(rowSum[row], colSum[col])
-                    result[row][col] = minimum
-                    rowSum[row] -= minimum
-                    colSum[col] -= minimum
+                if not rowSum[row]:
+                    break
+                minimum = min(rowSum[row], colSum[col])
+                result[row][col] = minimum
+                rowSum[row] -= minimum
+                colSum[col] -= minimum
         return result
