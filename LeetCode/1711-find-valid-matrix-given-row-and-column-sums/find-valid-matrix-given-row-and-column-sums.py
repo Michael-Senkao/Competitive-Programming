@@ -6,8 +6,9 @@ class Solution:
 
         for row in range(rows):
             for col in range(cols):
-                minimum = min(rowSum[row], colSum[col])
-                result[row][col] = minimum
-                rowSum[row] -= minimum
-                colSum[col] -= minimum
+                if rowSum[row] > 0 and colSum[col]:
+                    minimum = min(rowSum[row], colSum[col])
+                    result[row][col] = minimum
+                    rowSum[row] -= minimum
+                    colSum[col] -= minimum
         return result
