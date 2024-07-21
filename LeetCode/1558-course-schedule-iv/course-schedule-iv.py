@@ -7,8 +7,7 @@ class Solution:
         for u,v in prerequisites:
             graph[u].append(v)
             indegree[v] += 1
-        print(graph)
-        print(indegree)
+        
         q = deque()
         pre = defaultdict(set)
 
@@ -25,7 +24,8 @@ class Solution:
                 indegree[nei] -= 1
                 if indegree[nei] == 0:
                     q.append(nei)
+
         res = [u in pre[v] for u,v in queries]
-        print(pre)
+      
         return res
                         
