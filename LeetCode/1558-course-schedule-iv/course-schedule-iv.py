@@ -3,13 +3,13 @@ class Solution:
 
         indegree = [0 for _ in range(numCourses)]
         graph = defaultdict(list)
+        prerequisites_dict = defaultdict(set)
 
         for u,v in prerequisites:
             graph[u].append(v)
             indegree[v] += 1
         
         q = deque()
-        pre = defaultdict(set)
 
         for i in range(numCourses):
             if indegree[i] == 0:
@@ -18,14 +18,14 @@ class Solution:
         while q:
             curr = q.popleft()
             for nei in graph[curr]:
-                pre[nei].add(curr)
-                pre[nei].update(pre[curr])
-                print(pre[nei], pre[curr])
+                prerequisites_dict[nei].add(curr)
+                prerequisites_dict[nei].update(prerequisites_dict[curr])
+    
                 indegree[nei] -= 1
                 if indegree[nei] == 0:
                     q.append(nei)
 
-        res = [u in pre[v] for u,v in queries]
+        res = [u in prerequisites_dict[v] for u,v in queries]
       
         return res
                         
