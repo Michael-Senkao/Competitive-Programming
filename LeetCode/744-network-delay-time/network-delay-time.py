@@ -25,8 +25,8 @@ class Solution:
                     q.append(neighbor)
                     visited.add(neighbor)
 
-        print(costs)
-        print(visited)
+        # print(costs)
+        # print(visited)
         res = 0
         for c in costs.values():
             if c == float("inf"):
