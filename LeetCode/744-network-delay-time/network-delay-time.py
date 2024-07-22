@@ -9,27 +9,22 @@ class Solution:
             indegree[v] += 1
 
         visited = set()
-        q = deque([k])
-        visited.add(k)
+        q = [(0, k)]
+        heapify(q)
+        # visited.add(k)
         costs[k] = 0
         
 
         while q:
-            current_node = q.popleft()
+            # print(q)
+            curr_cost, current_node = heappop(q)
+            if current_node in visited:
+                continue
+            costs[current_node] = curr_cost
+            visited.add(current_node) 
             for neighbor, cost in graph[current_node]:
-                if neighbor in visited and costs[current_node] + cost < costs[neighbor]:
-                    costs[neighbor] =  costs[current_node] + cost
-                    q.append(neighbor)
-                elif neighbor not in visited:
-                    costs[neighbor] = costs[current_node] + cost
-                    q.append(neighbor)
-                    visited.add(neighbor)
+                heappush(q, (curr_cost + cost, neighbor))
 
-        # print(costs)
-        # print(visited)
-        res = 0
-        for c in costs.values():
-            if c == float("inf"):
-                return -1
-            res = max(res, c)
-        return res
+        if len(visited) != n:
+            return -1
+        return max(costs.values())
