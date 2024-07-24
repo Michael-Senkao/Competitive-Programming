@@ -9,7 +9,7 @@ class Solution:
             return int(str(mapping[num]) + res)
 
         mapped_values = [map_value(num) for num in nums]
-        print(mapped_values)
+        # print(mapped_values)
         result = [x[1] for x in sorted(enumerate(nums), key=lambda num: mapped_values[num[0]])]
         # print(result)
         return result
