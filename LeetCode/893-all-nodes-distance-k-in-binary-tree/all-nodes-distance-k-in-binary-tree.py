@@ -7,33 +7,32 @@
 
 class Solution:
     def distanceK(self, root: TreeNode, target: TreeNode, k: int) -> List[int]:
-        def dfs(node):
+        def createGraph(node):
             if node.left:
                 graph[node.val].append(node.left.val)
                 graph[node.left.val].append(node.val)
-                dfs(node.left)
+                createGraph(node.left)
             if node.right:
                 graph[node.val].append(node.right.val)
                 graph[node.right.val].append(node.val)
-                dfs(node.right)
+                createGraph(node.right)
 
         graph = defaultdict(list)
         result = []
-        dfs(root)
+        createGraph(root)
 
-        q = deque([(target.val, 0)])
+        q = deque([target.val])
         visited = set()
         visited.add(target.val)
 
-        while q:
-            node, distance = q.popleft()
-            if distance == k:
-                result.append(node)
-            else:
+        while k > 0 and q:
+            k -= 1
+            for _ in range(len(q)):
+                node = q.popleft()
                 for neighbor in graph[node]:
                     if neighbor not in visited:
-                        q.append((neighbor, distance + 1))
+                        q.append(neighbor)
                         visited.add(neighbor)
 
-
-        return result
+        # print(q)
+        return list(q)
