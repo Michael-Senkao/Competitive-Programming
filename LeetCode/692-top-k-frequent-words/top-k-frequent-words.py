@@ -5,7 +5,7 @@ class Solution:
         ans = []
 
         while k:
-            freq,word = heappop(heap)
+            _,word = heappop(heap)
             ans.append(word)
             k -= 1
         return ans
