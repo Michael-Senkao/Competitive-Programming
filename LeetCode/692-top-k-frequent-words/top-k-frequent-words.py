@@ -4,7 +4,7 @@ class Solution:
         heapify(heap)
         ans = []
 
-        while k and heap:
+        while k:
             freq,word = heappop(heap)
             ans.append(word)
             k -= 1
