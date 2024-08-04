@@ -13,10 +13,8 @@ class Solution:
                     bricks -= diff
                 elif ladders > 0:
                     ladders -= 1
-                    if max_heap:
-                        max_brick = -heappop(max_heap)
-                        if max_brick > diff:
-                            bricks += max_brick - diff
+                    max_brick = -heappop(max_heap)
+                    bricks += max_brick - diff
                 else:
                     return i
             i += 1
