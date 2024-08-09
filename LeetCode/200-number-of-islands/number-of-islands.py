@@ -6,7 +6,6 @@ class UnionFind:
         for i in range(rows):
             for j in range(cols):
                 self.parent[(i,j)] = (i, j)
-                self.size[i][j] = grid[i][j]
     
     def find(self, x: tuple):
         if x == self.parent[x]:
@@ -54,7 +53,7 @@ class Solution:
             for j in range(cols):
                 if valid(i,j):
                     connect(i,j)
-                    
+
         # Find the number of distinct representatives
         for i in range(rows):
             for j in range(cols):
