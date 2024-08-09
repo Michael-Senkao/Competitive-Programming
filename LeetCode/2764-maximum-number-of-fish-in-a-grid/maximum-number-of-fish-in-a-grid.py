@@ -17,6 +17,7 @@ class UnionFind:
     def union(self, x:tuple, y:tuple):
         r1,c1 = self.find(x)
         r2,c2 = self.find(y)
+        
         if (r1,c1) != (r2,c2):
             if self.size[r1][c1] > self.size[r2][c2]:
                 self.parent[(r2,c2)] = (r1,c1)
@@ -28,6 +29,7 @@ class UnionFind:
 
 class Solution:
     def findMaxFish(self, grid: List[List[int]]) -> int:
+
         def connect(i,j):
             if valid(i, j + 1):
                 dsu.union((i,j), (i, j + 1))
