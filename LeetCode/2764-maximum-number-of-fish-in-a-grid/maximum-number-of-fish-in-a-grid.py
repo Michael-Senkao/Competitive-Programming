@@ -1,44 +1,54 @@
+class UnionFind:
+    def __init__(self, rows, cols, grid):
+        self.parent = {}
+        self.size = [[0 for _ in range(cols)] for _ in range(rows)]
+
+        for i in range(rows):
+            for j in range(cols):
+                self.parent[(i,j)] = (i, j)
+                self.size[i][j] = grid[i][j]
+    
+    def find(self, x: tuple):
+        if x == self.parent[x]:
+            return x
+        self.parent[x] = self.find(self.parent[x])
+        return self.parent[x]
+    
+    def union(self, x:tuple, y:tuple):
+        r1,c1 = self.find(x)
+        r2,c2 = self.find(y)
+        if (r1,c1) != (r2,c2):
+            if self.size[r1][c1] > self.size[r2][c2]:
+                self.parent[(r2,c2)] = (r1,c1)
+                self.size[r1][c1] += self.size[r2][c2]
+            else:
+                self.parent[(r1,c1)] = (r2,c2)
+                self.size[r2][c2] += self.size[r1][c1]
+
+
 class Solution:
     def findMaxFish(self, grid: List[List[int]]) -> int:
-        def bfs(start_r, start_c):
-            q = deque()
-            fishes = 0
-            q.append((start_r, start_c))
-            visited.add((start_r, start_c))
+        def connect(i,j):
+            if valid(i, j + 1):
+                dsu.union((i,j), (i, j + 1))
+            if valid(i, j - 1):
+                dsu.union((i,j), (i, j - 1))
+            if valid(i + 1, j):
+                dsu.union((i,j), (i + 1, j))
+            if valid(i - 1, j):
+                dsu.union((i,j), (i - 1, j))
 
-            while q:
-                r,c = q.popleft()
-                fishes += grid[r][c]
-                if valid(r, c + 1):
-                    q.append((r, c + 1))
-                    visited.add((r, c + 1))
-                if valid(r, c - 1):
-                    q.append((r, c - 1))
-                    visited.add((r, c - 1))
-                if valid(r + 1, c ):
-                    q.append((r + 1, c))
-                    visited.add((r + 1, c))
-                if valid(r - 1, c):
-                    q.append((r - 1, c))
-                    visited.add((r - 1, c))
-            return fishes
-        
-        def valid(i,j):
-            if i < 0 or j < 0 or i == rows or j == cols or (i,j) in visited or grid[i][j] == 0:
+        def valid(r,c):
+            if r < 0 or c < 0 or r >= rows or c >= cols or grid[r][c] == 0:
                 return False
             return True
-        
 
-        rows, cols = len(grid), len(grid[0])
-        visited = set()
-        result = 0
+        rows,cols = len(grid), len(grid[0])
+        dsu = UnionFind(rows, cols, grid)
 
-        for r in range(rows):
-            for c in range(cols):
-                if valid(r, c):
-                    # print(result, end = " ")
-                    result = max(result, bfs(r, c))
-                    print(r,c, result)
+        for i in range(rows):
+            for j in range(cols):
+                if valid(i,j):
+                    connect(i,j)
         
-        return result
-                
+        return max([max(row) for row in dsu.size])
