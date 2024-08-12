@@ -5,7 +5,7 @@ class KthLargest:
         heapify(self.heap)
 
         self.k = k
-        
+
         self.adjustHeap()
         
 
@@ -17,7 +17,7 @@ class KthLargest:
         return self.heap[0]
     
     def adjustHeap(self):
-        while self.heap and len(self.heap) > self.k:
+        while len(self.heap) > self.k:
             heappop(self.heap)
         
 
