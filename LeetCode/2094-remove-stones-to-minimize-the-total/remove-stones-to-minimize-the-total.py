@@ -1,21 +1,17 @@
+import heapq
 class Solution:
     def minStoneSum(self, piles: List[int], k: int) -> int:
         heap = []
-        heapify(heap)
         total_stones = 0
 
         for pile in piles:
-            total_stones += pile
-            heappush(heap, -pile)
+            heapq.heappush(heap, -pile)
 
-        while k > 0:
-            curr = -heappop(heap)
-            if curr == 0:
-                return 0
-            total_stones -= int(curr/2)
-            curr -= int(curr/2)
-            heappush(heap, -curr)
-
+        while heap and k > 0:
+            largest = -heapq.heappop(heap)
+            largest -= largest//2
+            heapq.heappush(heap,-largest)
             k -= 1
-        return total_stones
-        
+
+
+        return -sum(heap)
