@@ -9,9 +9,15 @@ class Solution:
 
         while heap and k > 0:
             largest = -heapq.heappop(heap)
-            largest -= largest//2
-            heapq.heappush(heap,-largest)
-            k -= 1
+            second_largest = -heap[0] if heap else 0
+            while k > 0 and largest >= second_largest:
+                largest -= largest//2
+                k -= 1
+                if largest == 0:
+                    break
+            if largest > 0:
+                heapq.heappush(heap,-largest)
+            
 
 
         return -sum(heap)
