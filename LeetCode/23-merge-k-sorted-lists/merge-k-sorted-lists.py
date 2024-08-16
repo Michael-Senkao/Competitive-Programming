@@ -5,20 +5,36 @@
 #         self.next = next
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
-        heap = []
-        root = None
-        heapify(heap)
+        def mergeSort(left, right):
+            if left < right:
+                mid = left + (right - left)//2
+                l = mergeSort(left, mid)
+                r = mergeSort(mid+1, right)
+                return merge(l, r)
+
+            return lists[left]
         
-        for x in lists:
-            while x:
-                heappush(heap, x.val)
-                x = x.next
+        def merge(left, right):
+            dummy = curr = ListNode()
+            while left and right:
+                if left.val < right.val:
+                    curr.next = left
+                    left = left.next
+                else:
+                    curr.next = right
+                    right = right.next
+                curr = curr.next
+            if left:
+                curr.next = left
+            if right:
+                curr.next = right
+            # print_(dummy.next)
+            return dummy.next
+        # def print_(start):
+        #     while start:
+        #         print(start.val, end="->")
+        #         start = start.next
+        #     print()
+        if not lists: return None
+        return mergeSort(0, len(lists) - 1)
         
-        while heap:
-            val = heappop(heap)
-            if root:
-                temp.next = ListNode(val)
-                temp = temp.next
-            else:
-                root = temp = ListNode(val)
-        return root
