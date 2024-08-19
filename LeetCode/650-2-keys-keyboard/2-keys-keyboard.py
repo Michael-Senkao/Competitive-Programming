@@ -3,14 +3,14 @@ class Solution:
         if n == 1:
             return 0
 
-        copy = 1
-        res = 1
-        screen = 1
+        cache = 1
+        answer = 1
+        onScreen = 1
 
-        while screen < n:
-            screen += copy
-            res += 1
-            if screen < n and n % screen == 0:
-                copy = screen
-                res += 1
-        return res
+        while onScreen < n:
+            onScreen += cache
+            answer += 1 # Pasting
+            if onScreen < n and n % onScreen == 0:
+                cache = onScreen
+                answer += 1 # Copying
+        return answer
