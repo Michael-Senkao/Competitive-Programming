@@ -8,9 +8,9 @@ class Solution:
         onScreen = 1
 
         while onScreen < n:
-            onScreen += cache
-            answer += 1 # Pasting
+            onScreen += cache # Pasting
+            answer += 1 # Cost of Pasting
             if onScreen < n and n % onScreen == 0:
-                cache = onScreen
-                answer += 1 # Copying
+                cache = onScreen # Copying
+                answer += 1 # Cost of Copying
         return answer
