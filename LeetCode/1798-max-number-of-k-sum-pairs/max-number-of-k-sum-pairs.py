@@ -8,11 +8,9 @@ class Solution:
         found = defaultdict(int)
         while i < n:
             rem = k - nums[i]
-            if rem in found:
+            if found[rem] > 0:
                 result += 1
                 found[rem] -= 1
-                if found[rem] == 0:
-                    del found[rem]
             else:
                 found[nums[i]] += 1
             i += 1
