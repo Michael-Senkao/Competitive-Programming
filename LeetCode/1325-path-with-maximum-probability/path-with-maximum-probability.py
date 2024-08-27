@@ -19,9 +19,6 @@ class Solution:
                 if max_prob[curr]*prob > max_prob[nei]:
                     max_prob[nei] = max_prob[curr]*prob
                     q.append(nei)
-                elif nei not in visited:
-                    visited.add(nei)
-                    q.append(nei)
         
         return max_prob[end_node]
 
