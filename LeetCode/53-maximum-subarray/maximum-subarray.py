@@ -4,9 +4,6 @@ class Solution:
         max_sum = nums[0]
 
         for num in nums[1:]:
-            if num + runningSum < num:
-                runningSum = num
-            else:
-                runningSum += num
+            runningSum = max(num, num + runningSum)
             max_sum = max(max_sum, runningSum)
         return max_sum
