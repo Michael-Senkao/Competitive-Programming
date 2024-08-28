@@ -1,14 +1,15 @@
 class Solution:
     def change(self, amount: int, coins: List[int]) -> int:
-        @cache
-        def dp(index, total):
-            if index == len(coins):
-                return 1 if total==amount else 0
-            if total == amount:
+        memo = {}
+        def dp(index, curr_sum):
+            if curr_sum == amount:
                 return 1
-            if total > amount:
+            if index >= n or curr_sum > amount:
                 return 0
-            return dp(index, total + coins[index]) + dp(index + 1, total)
+            if (index, curr_sum) in memo:
+                return memo[(index, curr_sum)]
+            memo[(index, curr_sum)] = dp(index, curr_sum + coins[index]) + dp(index+1, curr_sum)
+            return memo[(index, curr_sum)]
 
+        n = len(coins)
         return dp(0, 0)
-            
