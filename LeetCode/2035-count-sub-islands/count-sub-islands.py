@@ -32,16 +32,9 @@ class Solution:
             
 
         rows, cols = len(grid1), len(grid1[0])
-        island_cells1 = set()
         islands2 = []
         visited2 = set()
-        directions = [1,-1]
         res = 0
-
-        for r in range(rows):
-            for c in range(cols):
-                if grid1[r][c]:
-                    island_cells1.add((r,c))
 
         for r in range(rows):
             for c in range(cols):
@@ -49,8 +42,8 @@ class Solution:
                     islands2.append(bfs(r, c))
        
         for island in islands2:
-            for cell in island:
-                if cell not in island_cells1:
+            for r,c in island:
+                if grid1[r][c] == 0:
                     break
             else:
                 res += 1
