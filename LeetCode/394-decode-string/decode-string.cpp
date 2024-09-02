@@ -10,7 +10,7 @@ public:
                 std::string k_str = "";
 
                 // Collect the current word
-                while (!stack.empty() && isalpha(stack.top())) {
+                while (isalpha(stack.top())) {
                     curr_word = stack.top() + curr_word;
                     stack.pop();
                 }
