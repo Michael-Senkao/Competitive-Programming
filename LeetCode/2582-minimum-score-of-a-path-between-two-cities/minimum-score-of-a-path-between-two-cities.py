@@ -12,16 +12,16 @@ class Solution:
         min_score = float('inf')
         visited = set()
         q = deque([1])
+        visited.add(1)
 
         while q:
             curr = q.popleft()
-            if curr in visited:
-                continue
-            visited.add(curr)
+
             for nei,score in graph[curr]:
+                min_score = min(min_score, score)
                 if nei not in visited:
-                    min_score = min(min_score, score)
                     q.append(nei)
+                    visited.add(curr)
         
         return min_score
         
