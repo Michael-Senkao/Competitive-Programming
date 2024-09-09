@@ -45,19 +45,14 @@ class Solution:
         r = c = 0
 
         while curr:
-            # print(r,c)
             if curr:
                 r,c = move(r,c, 'r')
-            # print(r,c)
             if curr:
                 r,c = move(r,c, 'd')
-            # print(r,c)
             if curr:
                 r,c = move(r,c, 'l')
-            # print(r,c)
             if curr:
                 r,c = move(r,c, 'u')
-            # print(r,c)
         
 
         return ans
