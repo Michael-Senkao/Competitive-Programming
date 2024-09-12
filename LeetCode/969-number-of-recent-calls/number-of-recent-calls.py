@@ -1,14 +1,14 @@
 class RecentCounter:
 
     def __init__(self):
-        self.calls = []
-        heapq.heapify(self.calls)
+        self.calls = deque()
         
 
     def ping(self, t: int) -> int:
-        while self.calls and ((t - self.calls[0]) > 3000):
-            heapq.heappop(self.calls)
-        heapq.heappush(self.calls, t)
+        self.calls.append(t)
+        while (t - self.calls[0]) > 3000:
+            self.calls.popleft()
+        
 
         return len(self.calls)
         
