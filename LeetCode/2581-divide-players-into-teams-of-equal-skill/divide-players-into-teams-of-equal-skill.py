@@ -3,19 +3,18 @@ class Solution:
         n = len(skill)
         if n == 2:
             return skill[0]*skill[1]
+
             
+        skill.sort()
         result = 0
-        size = sum(skill)*2 // n
-        found = defaultdict(int)
+        size = skill[0] + skill[-1]
+        left,right = 0, n - 1
 
-        for num in skill:
-            need = size - num
-            if need in found:
-                result += need*num
-                found[need] -= 1
-                if found[need] == 0:
-                    del found[need]
-            else:
-                found[num] += 1
+        while left < right:
+            if skill[left] + skill[right] != size:
+                return -1
+            result += skill[left]*skill[right]
+            left += 1
+            right -= 1
 
-        return result if len(found) == 0 else -1
+        return result
