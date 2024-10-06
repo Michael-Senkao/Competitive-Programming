@@ -27,8 +27,4 @@ class Solution:
             j -= 1
             count += 1
         
-        return count == n2
-        
-            
-
-        return i == len(sentence1) and j == len(sentence2) if sub else True
+        return count == n2 
