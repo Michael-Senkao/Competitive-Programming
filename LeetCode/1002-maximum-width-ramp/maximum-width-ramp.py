@@ -9,7 +9,7 @@ class Solution:
                 stack.append(i)
 
         i = n - 1
-        while stack and i >= 0:
+        while stack:
             if nums[i] >= nums[stack[-1]]:
                 res = max(res, i - stack[-1])
                 stack.pop()
