@@ -1,10 +1,11 @@
 class Solution:
     def smallestChair(self, times: List[List[int]], targetFriend: int) -> int:
-        n = len(times)
+        n = len(times) 
+
         indices = [i for i in range(n)]
 
         indices.sort(key=lambda i: times[i][0])
-        # print(indices)
+        
         free = [i for i in range(n)]
         taken = []
         heapq.heapify(free)
