@@ -8,6 +8,6 @@ class Solution:
         for _ in range(k):
             max_v = -heapq.heappop(max_heap)
             result += max_v
-            heapq.heappush(max_heap, -ceil(max_v / 3))
+            heapq.heappush(max_heap, -math.ceil(max_v / 3))
 
         return result
