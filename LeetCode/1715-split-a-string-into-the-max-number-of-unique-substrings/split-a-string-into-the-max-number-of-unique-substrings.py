@@ -15,6 +15,4 @@ class Solution:
             result.remove(curr)
             return max(include, exclude)
 
-        return helper(1, s[0], set())
-                
-        
+        return helper(0, "", set())    
