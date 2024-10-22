@@ -8,7 +8,8 @@ class Solution:
     def kthLargestLevelSum(self, root: Optional[TreeNode], k: int) -> int:
         min_heap = []
         heapq.heapify(min_heap)
-        q = deque([root])
+        q = deque()
+        q.append(root)
 
         while q:
             curr_sum = 0
