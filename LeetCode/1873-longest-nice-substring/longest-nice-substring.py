@@ -1,17 +1,23 @@
 class Solution:
     def longestNiceSubstring(self, s: str) -> str:
-        def long(s):
-            if len(s) < 2:
-                return ""
-            
-            sset = set(s)
-            for i in range(len(s)):
-                ch = s[i]
-                if ch.swapcase() not in s:
-                    s1 = long(s[:i])
-                    s2 = long(s[i+1: ])
-                    return s1 if len(s1) >= len(s2) else s2
-            return s
+        n = len(s)
+        start = end = -1
 
-        return long(s)
+        for i in range(n):
+            found = set()
+            distinct = 0
+            for j in range(i, n):
+                if s[j].swapcase() in found:
+                    found.add(s[j])
+                elif s[j] not in found:
+                    distinct += 1
+                    found.add(s[j])
 
+                if 2*distinct == len(found):
+                    if j - i > end - start:
+                        start,end = i,j
+                
+
+
+        return "" if start == -1 else s[start: end + 1]
+        
