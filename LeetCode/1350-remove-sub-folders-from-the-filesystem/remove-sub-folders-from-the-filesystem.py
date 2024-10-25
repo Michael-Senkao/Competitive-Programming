@@ -9,13 +9,14 @@ class Solution:
             sub_folder = []
             i = 0
             while i < len(f):
-                sub_folder.append(f[i] + f[i+1])
+                temp = [f[i], f[i+1]]
                 
                 i += 2
                 while i < len(f) and f[i] != '/':
-                    sub_folder[-1] += f[i]
+                    temp.append(f[i])
                     i += 1
-                
+                    
+                sub_folder.append("".join(temp))
                 if tuple(sub_folder) in roots:
                     break
             else:
