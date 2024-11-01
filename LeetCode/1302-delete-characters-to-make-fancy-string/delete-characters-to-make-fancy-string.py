@@ -2,8 +2,8 @@ class Solution:
     def makeFancyString(self, s: str) -> str:
         
         n = len(s)
-        if n < 3:
-            return s
+        # if n < 3:
+        #     return s
 
         res = [s[0]]
         count = 1
