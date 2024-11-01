@@ -5,9 +5,14 @@ class Solution:
         if n < 3:
             return s
 
-        res = [s[0], s[1]]
-        for i in range(2, n):
-            if not(s[i] == s[i-1] and s[i] == s[i - 2]):
+        res = [s[0]]
+        count = 1
+        for i in range(1, n):
+            if s[i] == s[i-1]:
+                count += 1
+            else:
+                count = 1
+            if count < 3:
                 res.append(s[i])
 
         return ''.join(res)
