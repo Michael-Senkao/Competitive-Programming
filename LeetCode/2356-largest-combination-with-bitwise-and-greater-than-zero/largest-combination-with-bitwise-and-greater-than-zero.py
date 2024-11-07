@@ -1,17 +1,12 @@
 class Solution:
     def largestCombination(self, candidates: List[int]) -> int:
-        
-        result = 0
-        flag = True
+        bits = [0]*24
 
-        while flag:
-            temp = 0
-            flag = False
-            for i in range(len(candidates)):
-                if not candidates[i]:
-                    continue
-                temp += candidates[i] & 1
-                candidates[i] >>= 1
-                flag = True
-            result = max(result, temp)
-        return result
+        for num in candidates:
+            i = 7
+            while num:
+                bits[i] += num & 1
+                num >>= 1
+                i -= 1
+        
+        return max(bits)
