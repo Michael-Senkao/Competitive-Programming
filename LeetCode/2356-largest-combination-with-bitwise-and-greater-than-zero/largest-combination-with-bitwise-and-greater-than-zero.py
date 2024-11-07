@@ -1,12 +1,17 @@
 class Solution:
     def largestCombination(self, candidates: List[int]) -> int:
-        max_cols = len(bin(max(candidates)))
-        bits = [(max_cols - len(bin(num)))*'0' + bin(num) for num in candidates]
+        
         result = 0
+        flag = True
 
-        for c in range(2,max_cols):
+        while flag:
             temp = 0
-            for r in range(len(candidates)):
-                temp += bits[r][c] == '1'
+            flag = False
+            for i in range(len(candidates)):
+                if not candidates[i]:
+                    continue
+                temp += candidates[i] & 1
+                candidates[i] >>= 1
+                flag = True
             result = max(result, temp)
         return result
