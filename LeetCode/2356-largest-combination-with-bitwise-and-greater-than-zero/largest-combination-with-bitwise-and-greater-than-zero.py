@@ -3,7 +3,7 @@ class Solution:
         bits = [0]*24
 
         for num in candidates:
-            i = 7
+            i = 23
             while num:
                 bits[i] += num & 1
                 num >>= 1
