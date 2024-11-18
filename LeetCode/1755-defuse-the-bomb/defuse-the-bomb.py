@@ -25,5 +25,5 @@ class Solution:
                     res.append(code[-1] - code[i] + code[index])
             else:
                 res.append(code[index] - code[i])
-        print(code)
+        
         return res
