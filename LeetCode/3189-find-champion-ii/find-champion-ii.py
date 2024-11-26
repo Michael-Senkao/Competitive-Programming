@@ -1,14 +1,11 @@
 class Solution:
     def findChampion(self, n: int, edges: List[List[int]]) -> int:
-        can_beat = [0]*n
-        champ = -1
+        teams = set([i for i in range(n)])
 
         for _,w in edges:
-            can_beat[w]+= 1
-        for i in range(n):
-            if not can_beat[i]:
-                if champ != -1:
-                    return -1
-                champ = i
-
-        return champ
+            if w in teams:
+                teams.remove(w)
+        if len(teams)>1:
+            return -1
+        for t in teams:
+            return t
