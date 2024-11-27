@@ -19,5 +19,4 @@ class Solution:
             update(u)
             res.append(distance[-1])
 
-        print(res)
         return res
