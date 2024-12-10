@@ -15,10 +15,10 @@ class Solution:
             temp = []
             for j in range(len(curr_str)):
                 temp.append(curr_str[j])
-                count["".join(temp)] += (len(curr_str) - j)
+                count[(curr_str[0], j + 1)] += (len(curr_str) - j)
 
         for key,val in count.items():
             if val > 2:
-                res = max(res, len(key))
+                res = max(res, key[1])
         return res if res > 0 else -1
         
