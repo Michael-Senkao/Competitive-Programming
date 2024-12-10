@@ -6,14 +6,15 @@ class Solution:
 
         i = 0
         while i < n:
-            curr_str = [s[i]]
+            ch = s[i]
+            curr_len = 1
             i += 1
-            while i < n and s[i] == s[i-1]:
-                curr_str.append(s[i])
+            while i < n and s[i] == ch:
+                curr_len += 1
                 i += 1
 
-            for j in range(len(curr_str)):
-                count[(curr_str[0], j + 1)] += (len(curr_str) - j)
+            for j in range(curr_len):
+                count[(ch, j + 1)] += (curr_len - j)
 
         for key,val in count.items():
             if val > 2:
