@@ -12,9 +12,7 @@ class Solution:
                 curr_str.append(s[i])
                 i += 1
 
-            temp = []
             for j in range(len(curr_str)):
-                temp.append(curr_str[j])
                 count[(curr_str[0], j + 1)] += (len(curr_str) - j)
 
         for key,val in count.items():
