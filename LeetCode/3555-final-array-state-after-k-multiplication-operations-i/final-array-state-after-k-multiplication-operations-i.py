@@ -2,18 +2,12 @@ class Solution:
     def getFinalState(self, nums: List[int], k: int, multiplier: int) -> List[int]:
 
         n = len(nums)
-        heap = [(val, index) for index,val in enumerate(nums)]
-        heapq.heapify(heap)
-
-
-        while k:
-            min_v,index = heapq.heappop(heap)
-            min_v *= multiplier
-            heapq.heappush(heap, (min_v, index))
-
-            k -= 1
+        for _ in range(k):
+            min_index = 0
+            for i in range(1, n):
+                if nums[i] < nums[min_index]:
+                    min_index = i
             
-        for i in range(n):
-            val,index = heap[i]
-            nums[index] = val
+            nums[min_index] *= multiplier
+
         return nums
