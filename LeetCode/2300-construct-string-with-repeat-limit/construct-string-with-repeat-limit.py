@@ -1,26 +1,30 @@
 
 class Solution:
     def repeatLimitedString(self, s: str, repeatLimit: int) -> str:
-        count = Counter(s) # count and match all appearing characters
-        heap = []
-        heapq.heapify(heap) # max heap
-        for key,value in count.items():
-            heapq.heappush(heap,(-ord(key),value))
+        count = [0]*26
         res = []
-        max_ch, max_v = heapq.heappop(heap)
-        while heap:
-            repeat = min(repeatLimit,max_v)
+        for char in s:
+            count[ord(char)-97]+=1
+        max_index = 25
+        while max_index >=0:
+            while max_index >=0 and not count[max_index]:
+                max_index-=1
+            if max_index < 0:
+                return ''.join(res)
+
+            repeat = min(repeatLimit,count[max_index])
+            count[max_index]-=repeat
             for _ in range(repeat):
-                res.append(chr(-max_ch))
-            max_v-=repeat
-            if max_v and heap:
-                next,next_v = heapq.heappop(heap)
-                res.append(chr(-next))
-                if next_v > 1:
-                    heapq.heappush(heap,(next,next_v-1))
-            elif heap:
-                max_ch,max_v = heapq.heappop(heap)
-        if not res or res[-1]!=chr(-max_ch):
-            for _ in range(min(repeatLimit,max_v)):
-                res.append(chr(-max_ch))
+                res.append(chr(max_index+97))
+            if count[max_index] == 0:
+                continue
+            
+            next_max = max_index-1
+            while next_max >=0 and not count[next_max]:
+                next_max-=1
+            if next_max < 0:
+                return ''.join(res)
+            res.append(chr(next_max+97))
+            count[next_max]-=1
+
         return ''.join(res)
