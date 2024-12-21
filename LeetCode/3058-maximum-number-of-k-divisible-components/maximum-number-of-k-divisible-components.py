@@ -3,8 +3,10 @@ class Solution:
         if n==1:
             return 1
 
-        degree = [0]*n
-        graph = defaultdict(list)
+        degree = [0]*n # To track the degree of each node
+        graph = defaultdict(list) # Adjacency list for tree
+
+        # Create adjacency list for the tree
         for u,v in edges:
             graph[u].append(v)
             graph[v].append(u)
@@ -13,14 +15,15 @@ class Solution:
         
         q = deque()
         count = 0
+
+        # Initialize the queue with the leaf nodes
         for i in range(n):
             if degree[i] == 1:
                 q.append(i)
 
+        # Use BFS to traverse the tree
         while q:
-            # print(q)
             node = q.popleft()
-            # print(node, values[node], values[node]%k==0)
             if values[node] % k == 0:
                 count += 1
                 values[node] = 0
