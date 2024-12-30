@@ -5,24 +5,22 @@ class Solution:
             if length > high:
                 return 0
             
-            if length in memo:
-                return memo[length]
+            if dp[length] != -1:
+                return dp[length]
 
             add_zero = backtrack(length + zero) % MOD
             add_one = backtrack(length + one) % MOD
 
-            memo[length] = (add_zero + add_one + (low <= length <= high)) % MOD
+            dp[length] = (add_zero + add_one + (low <= length <= high)) % MOD
 
 
-            return memo[length]
+            return dp[length]
 
         MOD = 10**9 + 7
-        # dp = [-1]*(high + 1)
-
-        memo = {}
+        dp = [-1]*(high + 1)
 
         ans = backtrack(0)
-        # print(dp)
+        
         return ans
             
         
