@@ -1,10 +1,11 @@
 class Solution:
     def waysToSplitArray(self, nums: List[int]) -> int:
-        total = sum(nums)
+        right_sum = sum(nums)
         count = 0
         n = len(nums)
-        current = 0
+        left_sum = 0
         for i in range(n-1):
-            current += nums[i]
-            count += (current >= (total - current))
+            left_sum += nums[i]
+            right_sum -= nums[i]
+            count += (left_sum >= right_sum)
         return count
