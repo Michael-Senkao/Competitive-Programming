@@ -12,7 +12,7 @@ class Solution:
                 
             for char in unique_left:
                 if char in unique_right:
-                    palindromes.add(char + s[i] + char)
+                    palindromes.add(char + s[i])
             unique_left.add(s[i])
 
         return len(palindromes)
