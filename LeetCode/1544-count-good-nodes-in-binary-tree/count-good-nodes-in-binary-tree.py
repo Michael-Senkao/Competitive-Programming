@@ -5,20 +5,11 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def bfs(self,root):
-        q = deque([(root, float('-inf'))])
-        count = 0
-
-        while q:
-            node,max_v = q.popleft()
-            new_max = max(max_v, node.val)
-            count += (node.val == new_max)
-            if node.left:
-                q.append((node.left, new_max))
-            if node.right:
-                q.append((node.right, new_max))
-        return count
-        
+    def dfs(self,node, curr_max):
+        if node is None:
+            return 0
+        new_max = max(node.val, curr_max)
+        return (1 if new_max==node.val else 0) + self.dfs(node.left, new_max) + self.dfs(node.right, new_max)
     def goodNodes(self, root: TreeNode) -> int:
-        return self.bfs(root)
+        return self.dfs(root, float('-inf'))
         
