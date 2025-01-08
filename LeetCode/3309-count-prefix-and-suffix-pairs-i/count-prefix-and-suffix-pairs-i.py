@@ -1,6 +1,7 @@
 class Solution:
     def isPrefixAndSuffix(self, str1, str2):
-        return 1 if str2.startswith(str1) and str2.endswith(str1) else 0
+        
+        return (str2.find(str1) == 0) and (str2[::-1].find(str1[::-1]) == 0)
 
     def countPrefixSuffixPairs(self, words: List[str]) -> int:
         n = len(words)
