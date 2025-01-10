@@ -1,18 +1,18 @@
-class Solution:
-    def wordSubsets(self, words1: List[str], words2: List[str]) -> List[str]:
-        freq2 = {}
-        res = []
+class Solution(object):
+    def wordSubsets(self, A, B):
+        def count(word):
+            ans = [0] * 26
+            for letter in word:
+                ans[ord(letter) - ord('a')] += 1
+            return ans
 
-        for word in words2:
-            freq = Counter(word)
-            for key,val in freq.items():
-                freq2[key] = max(freq2.get(key, 0), val)
+        bmax = [0] * 26
+        for b in B:
+            for i, c in enumerate(count(b)):
+                bmax[i] = max(bmax[i], c)
 
-        for word in words1:
-            freq = Counter(word)
-            for key,val in freq2.items():
-                if freq.get(key, 0) < val:
-                    break   
-            else:
-                res.append(word)
-        return res
+        ans = []
+        for a in A:
+            if all(x >= y for x, y in zip(count(a), bmax)):
+                ans.append(a)
+        return ans
