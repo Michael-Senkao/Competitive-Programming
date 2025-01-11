@@ -5,21 +5,19 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+
+    def __init__(self):
+        self.res = []
+
+    def dfs(self,node, level):
+        if node is None:
+            return
+        if level == len(self.res):
+            self.res.append(node.val)
+        self.dfs(node.right, level + 1)
+        self.dfs(node.left, level + 1)
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
-        level_order = []
-        def dfs(node, current_level):
-            if not node:
-                return
-            if len(level_order) < current_level + 1:
-                level_order.append([node.val])
-            else:
-                level_order[current_level].append(node.val)
-            dfs(node.left, current_level + 1)
-            dfs(node.right, current_level + 1)
         
-        res = []
-        dfs(root, 0)
-        for level in level_order:
-            res.append(level[-1])
-        
-        return res
+        self.dfs(root, 0)
+       
+        return self.res
