@@ -1,17 +1,19 @@
 class Solution:
     def findThePrefixCommonArray(self, A: List[int], B: List[int]) -> List[int]:
-        countA,countB = set(),set()
+        found = set()
         res = []
+        prefix = 0
 
         for i in range(len(A)):
-            countA.add(A[i])
-            countB.add(B[i])
-
-            count = 0
-            for num in countB:
-                if num in countA:
-                    count += 1
+            if A[i] in found:
+                prefix += 1
+            else:
+                found.add(A[i])
+            if B[i] in found:
+                prefix += 1
+            else:
+                found.add(B[i])
             
-            res.append(count)
+            res.append(prefix)
 
         return res
