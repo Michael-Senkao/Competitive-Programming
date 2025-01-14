@@ -1,18 +1,19 @@
 class Solution:
     def findThePrefixCommonArray(self, A: List[int], B: List[int]) -> List[int]:
-        found = set()
+        n = len(A)
+        found = [False]*(n+1)
         res = []
         prefix = 0
 
         for i in range(len(A)):
-            if A[i] in found:
+            if found[A[i]]:
                 prefix += 1
             else:
-                found.add(A[i])
-            if B[i] in found:
+                found[A[i]] = True
+            if found[B[i]]:
                 prefix += 1
             else:
-                found.add(B[i])
+                found[B[i]] = True
             
             res.append(prefix)
 
