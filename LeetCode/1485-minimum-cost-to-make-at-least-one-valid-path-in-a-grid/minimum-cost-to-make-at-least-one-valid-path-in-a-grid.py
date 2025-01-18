@@ -15,9 +15,11 @@ class Solution:
         n,m = len(grid), len(grid[0])
         costs= [[float('inf') for _ in range(m)] for _ in range(n)]
         costs[0][0] = 0
+        
         min_heap = []
         heapify(min_heap)
        
+       # (cost, row, col)
         heapq.heappush(min_heap, (0,0,0))
 
         while min_heap:
