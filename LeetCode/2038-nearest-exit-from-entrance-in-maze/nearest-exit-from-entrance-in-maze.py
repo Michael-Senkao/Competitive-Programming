@@ -1,44 +1,46 @@
 class Solution:
     def nearestExit(self, maze: List[List[str]], entrance: List[int]) -> int:
-        # Helper function to add valid neighboring cells to the queue
-        def addNext(r, c, q, ROWS, COLS):
-            # Define possible moves: up, down, left, and right
-            moves = [(r + 1, c), (r - 1, c), (r, c + 1), (r, c - 1)]
-            
-            for i, j in moves:
-                # Check if the move is within bounds, is a '.', and hasn't been visited
-                if (0 <= i < ROWS 
-                    and 0 <= j < COLS 
-                    and maze[i][j] == '.' 
-                    and (i, j) not in visited):
-                    q.append((i, j))  # Add the valid move to the queue
-                    visited.add((i, j))  # Mark the cell as visited
+        """
+        Finds the shortest path to the nearest exit from the given entrance.
+        
+        Args:
+            maze (List[List[str]]): 2D grid representing the maze.
+            entrance (List[int]): Starting coordinates [row, col].
+        
+        Returns:
+            int: The minimum number of steps to the nearest exit, or -1 if none exists.
+        """
+        from collections import deque
 
-        ROWS, COLS = len(maze), len(maze[0])  # Dimensions of the maze
-        q = deque()  # Queue for BFS traversal
-        visited = set()  # Set to track visited cells
-        start_r, start_c = entrance  # Starting coordinates
-        steps = 1  # Step counter to track the distance to the nearest exit
-        
-        # Mark the entrance as visited
-        visited.add((start_r, start_c))
-        # Add the initial neighbors of the entrance to the queue
-        addNext(start_r, start_c, q, ROWS, COLS)
-        
-        # BFS traversal
-        while q:
-            n = len(q)  # Number of elements at the current BFS level
-            for _ in range(n):
-                r, c = q.popleft()  # Get the next cell to process
-                
-                # Check if the current cell is an exit
-                if r == 0 or c == 0 or r == ROWS - 1 or c == COLS - 1:
+        def enqueue_valid_neighbors(row, col, queue, rows, cols):
+            """Adds all valid neighboring cells to the BFS queue."""
+            moves = [(row + 1, col), (row - 1, col), (row, col + 1), (row, col - 1)]
+            for r, c in moves:
+                if (0 <= r < rows and 0 <= c < cols and maze[r][c] == '.'):
+                    queue.append((r, c))
+                    # visited.add((r, c))
+                    # Assuming we are allowed to alter the input maze
+                    maze[r][c] = '+'
+
+        rows, cols = len(maze), len(maze[0])
+        queue = deque()
+        # visited = set()
+        start_row, start_col = entrance
+
+
+        # Initialize BFS
+        # visited.add((start_row, start_col))
+        maze[start_row][start_col] = '+'
+        enqueue_valid_neighbors(start_row, start_col, queue, rows, cols)
+        steps = 1
+
+        # BFS loop
+        while queue:
+            for _ in range(len(queue)):
+                row, col = queue.popleft()
+                if row in [0, rows - 1] or col in [0, cols - 1]:
                     return steps
-                
-                # Add the neighbors of the current cell to the queue
-                addNext(r, c, q, ROWS, COLS)
-            
-            steps += 1  # Increment the step count after processing all cells at the current level
+                enqueue_valid_neighbors(row, col, queue, rows, cols)
+            steps += 1
 
-        # If no exit is found, return -1
         return -1
