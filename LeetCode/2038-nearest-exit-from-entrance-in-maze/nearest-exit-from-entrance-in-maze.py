@@ -1,36 +1,33 @@
 class Solution:
     def nearestExit(self, maze: List[List[str]], entrance: List[int]) -> int:
-        def bfs(i,j):
-            def valid(r,c):
-                return r>=0 and c>=0 and r < rows and c<cols and maze[r][c] != "+" and (r,c) not in visited
-            def getValidIndexes(row, col, cost):
-                if valid(row, col+1):
-                    q.append((row,col+1, cost + 1))
-                    visited.add((row,col + 1))
+        def addNext(r,c, q, ROWS, COLS):
+            moves = [(r+1,c), (r-1,c), (r,c+1), (r,c-1)]
 
-                if valid(row, col-1):
-                    q.append((row,col-1, cost + 1))
-                    visited.add((row,col - 1))
-                if valid(row+1, col):
-                    q.append((row + 1,col, cost + 1))
-                    visited.add((row + 1,col))
-                if valid(row-1, col):
-                    q.append((row-1,col, cost + 1))
-                    visited.add((row - 1,col))
+            for i,j in moves:
+                if (0 <= i < ROWS 
+                    and 0 <= j < COLS 
+                    and maze[i][j] == '.' 
+                    and (i,j) not in visited):
+                    q.append((i,j))
+                    visited.add((i,j))
         
-            q = deque()
-            visited = set()
-            getValidIndexes(i, j, 0)
-            visited.add((i,j))
+        ROWS,COLS = len(maze), len(maze[0])
+        q = deque()
+        visited = set()
+        start_r,start_c = entrance
+        steps = 1
+      
+        visited.add((start_r, start_c))
+        addNext(start_r, start_c, q, ROWS,COLS)
+        
+        while q:
+            n = len(q)
+            for i in range(len(q)):
+                r,c = q.popleft()
+                if r == 0 or c == 0 or r == ROWS - 1 or c == COLS - 1:
+                    return steps
+                addNext(r,c,q,ROWS,COLS)
 
-            while q:
-                row,col,cost = q.popleft()
-                
-                if (row == 0 or col == 0 or row == rows-1 or col == cols-1):
-                    return cost
-                getValidIndexes(row, col, cost)
+            steps += 1
 
-            return -1
-        rows,cols = len(maze),len(maze[0])
-        return bfs(entrance[0], entrance[1])
-            
+        return -1
