@@ -1,43 +1,57 @@
-"""
-You are given an m x n grid where each cell can have one of three values:
-
-0 representing an empty cell,
-1 representing a fresh orange, or
-2 representing a rotten orange.
-Every minute, any fresh orange that is 4-directionally adjacent to a rotten orange becomes rotten.
-
-Return the minimum number of minutes that must elapse until no cell has a fresh orange. If this is impossible, return -1.
-"""
+from collections import deque
+from typing import List
 
 class Solution:
     def orangesRotting(self, grid: List[List[int]]) -> int:
-        if not grid or not grid[0]:
-            return 0
-        rows,cols = len(grid), len(grid[0])
-        q = deque()
+        """
+        Calculates the minimum number of minutes needed for all fresh oranges to rot, or
+        returns -1 if it is impossible.
+
+        Args:
+            grid (List[List[int]]): A 2D grid where:
+                0 represents an empty cell,
+                1 represents a fresh orange,
+                2 represents a rotten orange.
         
-        # Initialize queue with initial rotten fruits
+        Returns:
+            int: The minimum number of minutes, or -1 if some fresh oranges cannot rot.
+        """
+        if not grid or not grid[0]:
+            return 0  # Edge case: empty grid
+        
+        rows, cols = len(grid), len(grid[0])
+        q = deque()  # Queue for BFS to track rotten oranges
+        fresh_count = 0  # Count of fresh oranges
+
+        # Initialize queue with positions of all rotten oranges and count fresh oranges
         for row in range(rows):
             for col in range(cols):
                 if grid[row][col] == 2:
                     q.append((row, col))
+                elif grid[row][col] == 1:
+                    fresh_count += 1
 
-        minute = 0
+        # Early exit if there are no fresh oranges to begin with
+        if fresh_count == 0:
+            return 0
+
+        minute = 0  # Track elapsed time
         while q:
             for _ in range(len(q)):
-                row,col = q.popleft()
+                row, col = q.popleft()
+                # Check all 4 possible directions (up, down, left, right)
                 moves = [(row + 1, col), (row - 1, col), (row, col + 1), (row, col - 1)]
-                for r,c in moves:
-                    if r < 0 or r == rows or c < 0 or c == cols:
+                for r, c in moves:
+                    # Skip out-of-bound cells or cells that are not fresh oranges
+                    if r < 0 or r >= rows or c < 0 or c >= cols or grid[r][c] != 1:
                         continue
-                    if grid[r][c] == 1:
-                        q.append((r,c))
-                        grid[r][c] = 2
+                    # Rotten the fresh orange and add it to the queue
+                    grid[r][c] = 2
+                    q.append((r, c))
+                    fresh_count -= 1  # Decrease fresh orange count
 
+            # Increment time after processing one level of BFS
             minute += 1
-        for row in range(rows):
-            for col in range(cols):
-                if grid[row][col] == 1:
-                    return -1 # Can't make this one rotten
 
-        return minute - 1 if minute > 0 else 0
+        # If there are still fresh oranges left, return -1
+        return -1 if fresh_count > 0 else minute - 1 if minute > 0 else 0
