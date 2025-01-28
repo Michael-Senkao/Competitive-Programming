@@ -18,6 +18,7 @@ class Solution:
 
         for row in range(rows):
             for col in range(cols):
-                result = max(result, self.dfs(row, col, grid))
+                if grid[row][col]:
+                    result = max(result, self.dfs(row, col, grid))
 
         return result
