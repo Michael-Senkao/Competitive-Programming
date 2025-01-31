@@ -1,58 +1,51 @@
+from typing import List
+from collections import deque
+
 class Solution:
-    def dfs(self,start_i,start_j, grid, island_id):
-        stack = [(start_i, start_j)]
+    def bfs(self, start_i: int, start_j: int, grid: List[List[int]], island_id: int) -> int:
+        """ Perform BFS to mark the island and return its size. """
+        queue = deque([(start_i, start_j)])
         grid[start_i][start_j] = island_id
         island_size = 1
+        directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]  # Down, Up, Right, Left
 
-        while stack:
-            curr_i,curr_j = stack.pop()
-            moves = [(curr_i+1,curr_j),(curr_i-1,curr_j),(curr_i,curr_j+1),(curr_i,curr_j-1)]
-
-            for next_i,next_j in moves:
-                if self.isValid(next_i, next_j, grid):
-                    stack.append((next_i, next_j))
+        while queue:
+            curr_i, curr_j = queue.popleft()
+            for di, dj in directions:
+                next_i, next_j = curr_i + di, curr_j + dj
+                if 0 <= next_i < len(grid) and 0 <= next_j < len(grid) and grid[next_i][next_j] == 1:
+                    queue.append((next_i, next_j))
                     grid[next_i][next_j] = island_id
                     island_size += 1
 
         return island_size
 
-    def isValid(self, row,col, grid):
-        return 0 <= row < len(grid) and 0 <= col < len(grid) and grid[row][col] == 1
-
     def largestIsland(self, grid: List[List[int]]) -> int:
-
+        """ Returns the largest possible island size after flipping one '0' to '1'. """
         n = len(grid)
-        islands = [0,0,0]
-        
-        
+        island_id = 2  # Start from 2 to differentiate from land (1)
+        island_sizes = {0: 0}  # Store island sizes, mapping ID to size
+
+        # Step 1: Find all islands and mark them
         for i in range(n):
             for j in range(n):
                 if grid[i][j] == 1:
-                    size = self.dfs(i, j, grid, len(islands))
-                    islands.append(size)
+                    island_sizes[island_id] = self.bfs(i, j, grid, island_id)
+                    island_id += 1
 
-        if len(islands) == 3:
-            return 1
-        if len(islands) == 4:
-            if islands[-1] == n*n:
-                return islands[-1]
-            return islands[-1] + 1   
-        
-        
-        res = 0
-        
-            
+        max_island = max(island_sizes.values()) if island_sizes else 0  # Handle no land case
+
+        # Step 2: Try flipping each '0' to connect islands
         for i in range(n):
             for j in range(n):
-                if not grid[i][j]:
-                    surrounding_islands = set()
-                    size = 0
-                    moves = [(i+1,j),(i-1,j),(i,j+1),(i,j-1)]
-                    for row,col in moves:
-                        if 0 <= row < n and 0 <= col < n and grid[row][col] not in surrounding_islands:
-                            size += islands[grid[row][col]]
-                            surrounding_islands.add(grid[row][col])
+                if grid[i][j] == 0:
+                    seen_islands = set()
+                    new_size = 1  # Start with 1 (flipping this cell to '1')
+                    for di, dj in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
+                        row, col = i + di, j + dj
+                        if 0 <= row < n and 0 <= col < n and grid[row][col] > 1:
+                            seen_islands.add(grid[row][col])
+                    new_size += sum(island_sizes[is_id] for is_id in seen_islands)
+                    max_island = max(max_island, new_size)
 
-                    res = max(res, size+1)
-     
-        return res
+        return max_island
